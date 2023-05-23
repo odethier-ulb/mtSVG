@@ -22,7 +22,8 @@ arguments:
   --gff <string>          The path to the gff file [REQUIRED]
   --svg <string>          The path of the SVG to create [OPTIONAL, default=linear_mtdna.svg]
   --length <int>          The mtDNA length in bp to scale the output [REQUIRED]
-  --cox2cob <boolean>     If it should be oriented to start with cox2-cob [OPTIONAL, default=false]
+  --start <string>        Gene to use at the start of the ribbon [OPTIONAL, default=cox1]
+  --reverse <string>      If true, the gene order in the gff is reversed [OPTIONAL, default=false]
 ```
 
 ## Example
