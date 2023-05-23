@@ -29,7 +29,7 @@ arguments:
 ## Example
 
 ```
-./mtSVG.py --gff example.gff --length 14934 --cox2cob true
+./mtSVG.py --gff example.gff --length 14934 --start cox2 --reverse true
 ```
 
 ## Output
