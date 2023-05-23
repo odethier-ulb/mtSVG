@@ -100,8 +100,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Convert a MITOS2 mtDNA GFF to a linear SVG representation')
     parser.add_argument('--gff', type=str, help='The path to the gff file')
     parser.add_argument('--svg', type=str, help='The path of the SVG to create', default='linear_mtdna.svg')
-    parser.add_argument('--length', type=int, help='The mtDNA length in bp')
-    parser.add_argument('--cox2cob', type=bool, help='Yes if it should be oriented to start with cox2-cob', default=False)
+    parser.add_argument('--length', type=int, help='The mtDNA length in bp (used to scale the output)')
+    parser.add_argument('--cox2cob', type=bool, help='If it should be oriented to start with cox2-cob', default=False)
     args = parser.parse_args()
 
     if args.gff is None:
