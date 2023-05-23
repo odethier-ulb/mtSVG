@@ -1,21 +1,37 @@
 # mtSVG
+
 Convert a mtDNA GFF returned by MITOS2 to a linear SVG representation
 
-# Installation
+## Installation
 
 Require `Python3`, the script `mtSVG.py` and the library `drawsvg` which can be installed as follows. 
+
 ```
 python3 -m pip install "drawsvg~=2.0"
 ```
 
-# Usage
+## Usage
 
 Example:
+```
+usage: mtSVG.py [-h] [--gff GFF] [--svg SVG] [--length LENGTH]
+                [--cox2cob COX2COB]
+                
+arguments:
+  -h, --help         show this help message and exit
+  --gff <string>          The path to the gff file [REQUIRED]
+  --svg <string>          The path of the SVG to create [OPTIONAL, default=linear_mtdna.svg]
+  --length <int>          The mtDNA length in bp to scale the output [REQUIRED]
+  --cox2cob <boolean>     If it should be oriented to start with cox2-cob [OPTIONAL, default=false]
+```
+
+## Example
+
 ```
 ./mtSVG.py --gff example.gff --length 14934 --cox2cob true
 ```
 
-# Output
+## Output
 
 A linear representation of the mtDNA genes present in the GFF exported as a SVG image.
 
