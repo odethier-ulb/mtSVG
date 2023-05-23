@@ -20,7 +20,7 @@ def compute_length(start, end, mtdna_size):
         length = mtdna_size - start + end
     return length
 
-def get_gene_list(gff_file, mtdna_size, cox2cob):
+def get_gene_list(gff_file, mtdna_size, start, reverse):
     result, max_length = [], -9999
 
     # get gene list and size
@@ -35,32 +35,22 @@ def get_gene_list(gff_file, mtdna_size, cox2cob):
                 max_length = length
             result.append([gene, length])
 
-    if cox2cob: 
-        # find cox-cob2 order and reverse if needed
-        should_reverse, cob_found = False, False
-        for entry in result:
-            if 'cob' in entry[0]:
-                cob_found = True
-            if 'cox2' in entry[0] and cob_found:
-                should_reverse = True
-                break
-        if should_reverse:
-            result.reverse()
+    if reverse == 'true':
+        result.reverse()
 
-        # find index of cox2 and shit if not zero
-        cox2_idx = -1
-        for i in range(0, len(result)):
-            if 'cox2' in result[i][0]:
-                cox2_idx = i
-                break
-        if cox2_idx > 0:
-            for i in range(0, cox2_idx):
-                result.append(result[i])
-            new_result = []
-            for i in range(cox2_idx, len(result)):
-                new_result.append(result[i])
-            result = new_result
-
+    # change start and order
+    start_idx = -1
+    for i in range(0, len(result)):
+        if start in result[i][0]:
+            start_idx = i
+            break
+    new_result = []
+    for i in range(start_idx, len(result)):
+        new_result.append(result[i])
+    for i in range(0, start_idx):
+        new_result.append(result[i])
+    result = new_result
+    
     # compute graphical length
     unit = float(max_length/10)
     for entry in result:
@@ -78,11 +68,14 @@ def add_rectangle(center, width, height, gene, drawing):
     drawing.append(rectangle)
     drawing.append(draw.Text(gene, 100, center[0] - 100, center[1] + 25))
 
-def main(gff, svg, length, cox2cob):
-    genes = get_gene_list(gff, length, cox2cob)
+def main(gff, svg, length, start, reverse):
+    genes = get_gene_list(gff, length, start, reverse)
+
+    if len(genes) == 0:
+        sys.exit('Error : no gene found')
    
     width = sum([gene[2] for gene in genes])
-    center = [-width/2, 0]
+    center = [-width/2 + genes[0][2] / 2, 0]
 
     d = draw.Drawing(width + 500, 500, origin='center')
 
@@ -101,7 +94,8 @@ if __name__ == '__main__':
     parser.add_argument('--gff', type=str, help='The path to the gff file')
     parser.add_argument('--svg', type=str, help='The path of the SVG to create', default='linear_mtdna.svg')
     parser.add_argument('--length', type=int, help='The mtDNA length in bp (used to scale the output)')
-    parser.add_argument('--cox2cob', type=bool, help='If it should be oriented to start with cox2-cob', default=False)
+    parser.add_argument('--start', type=str, help='Gene to use at the start of the ribbon', default='cox1')
+    parser.add_argument('--reverse', type=str, help='If true, the gene order in the gff is reversed', default='false')
     args = parser.parse_args()
 
     if args.gff is None:
@@ -110,5 +104,5 @@ if __name__ == '__main__':
     if args.length is None:
         sys.exit('Error : no mtDNA length')
 
-    main(args.gff, args.svg, args.length, args.cox2cob)
+    main(args.gff, args.svg, args.length, args.start, args.reverse)
     print('Done !')
