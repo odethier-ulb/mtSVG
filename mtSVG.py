@@ -29,7 +29,7 @@ def get_gene_list(gff_file, mtdna_size, start, reverse):
     # get gene list and size
     with open(gff_file, 'rt') as f:
         for line in f:
-            if not "\tgene" in line and not "\ttRNA" in line:
+            if not "\tgene" in line and not "\ttRNA" in line and not "\trRNA" in line:
                 continue
             lsplt = line.strip().split()
             gene = lsplt[8].split('=')[-1]
