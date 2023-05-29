@@ -8,11 +8,13 @@ import drawsvg as draw
 
 gene_colors = {'co': '#f2ed8d', 'na' : '#b6e07b', 'rrn' : '#c7ace3', 'atp': '#b3e6e8', 'trn' : '#e69d97'}
 
+
 def get_color(gene):
     for k in gene_colors:
         if gene.startswith(k):
             return gene_colors[k]
     return #ffffff
+
 
 def compute_length(start, end, mtdna_size):
     length = end - start
@@ -20,16 +22,17 @@ def compute_length(start, end, mtdna_size):
         length = mtdna_size - start + end
     return length
 
+
 def get_gene_list(gff_file, mtdna_size, start, reverse):
     result, max_length = [], -9999
 
     # get gene list and size
     with open(gff_file, 'rt') as f:
         for line in f:
-            if not 'ID=transcript' in line:
+            if not "\tgene" in line and not "\ttRNA" in line:
                 continue
             lsplt = line.strip().split()
-            gene = lsplt[8].split(';')[2].replace('gene_id=', '').split('_')[0]
+            gene = lsplt[8].split('=')[-1]
             length = compute_length(int(lsplt[3]), int(lsplt[4]), mtdna_size)
             if length > max_length:
                 max_length = length
@@ -67,6 +70,7 @@ def add_rectangle(center, width, height, gene, drawing):
                            close=True, fill=get_color(gene), stroke='black', stroke_width=10)
     drawing.append(rectangle)
     drawing.append(draw.Text(gene, 100, center[0] - 100, center[1] + 25))
+
 
 def main(gff, svg, length, start, reverse):
     genes = get_gene_list(gff, length, start, reverse)
