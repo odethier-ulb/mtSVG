@@ -91,7 +91,7 @@ def main(gff, svg, length, start, reverse):
 
     d.set_pixel_scale(2)
     d.save_svg(svg)
-    
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Convert a MITOS2 mtDNA GFF to a linear SVG representation')
@@ -108,5 +108,11 @@ if __name__ == '__main__':
     if args.length is None:
         sys.exit('Error : no mtDNA length')
 
-    main(args.gff, args.svg, args.length, args.start, args.reverse)
+    from lib.GffParser import get_genomes
+
+    genomes = get_genomes([('test', 14934, args.gff)])
+
+
+    #main(args.gff, args.svg, args.length, args.start, args.reverse)
+    #draw_test(args.svg)
     print('Done !')
