@@ -26,6 +26,9 @@ class MtGenome:
     length: int
     genes: list
 
+    def get_scaled_length(self) -> int:
+        return sum([g.scaled_length for g in self.genes])
+
 
 def __parse_gff(filepath: str) -> List[Gene]:
     genes = []

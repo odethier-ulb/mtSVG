@@ -5,6 +5,7 @@ import math
 import argparse
 import sys
 import drawsvg as draw
+from lib.Drawing import draw_ribbons
 
 gene_colors = {'co': '#f2ed8d', 'na' : '#b6e07b', 'rrn' : '#c7ace3', 'atp': '#b3e6e8', 'trn' : '#e69d97'}
 
@@ -111,6 +112,8 @@ if __name__ == '__main__':
     from lib.GffParser import get_genomes
 
     genomes = get_genomes([('test', 14934, args.gff)])
+
+    draw_ribbons([genomes, genomes], args.svg)
 
 
     #main(args.gff, args.svg, args.length, args.start, args.reverse)
