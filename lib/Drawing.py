@@ -17,7 +17,7 @@ STROKE_WIDTH = 5
 PIXEL_SCALE = 2
 INTER_GENOME_SPACE = 50
 INTRA_GENOME_SPACE = 10
-GENE_HEIGHT = 100
+GENE_HEIGHT = 150
 ORIENTATION_HEIGHT = 20
 SPECIES_HEIGHT = 30
 
@@ -49,16 +49,16 @@ def get_drawables(genomes: List[MtGenome], color_scheme: dict) -> List[DrawableG
 
 
 def get_drawing(drawables: List[DrawableGenome]) -> draw.Drawing:
-    width = max([(drawable.genome[0].get_scaled_length() * SCALE_FACTOR) + len(drawable.genome[0].genes) * STROKE_WIDTH
+    width = max([(drawable.genome.get_scaled_length() * SCALE_FACTOR) + len(drawable.genome.genes) * STROKE_WIDTH
                  for drawable in drawables])
     height = RIBBON_HEIGHT * len(drawables)
     return draw.Drawing(width, height)
 
 
 def draw_genome(drawable: DrawableGenome, drawing: draw.Drawing):
-    origin = drawable.origin
-    for gene in drawable.genome[0].genes:
-        origin = draw_gene(gene, origin, drawing, get_gene_color(drawable.color_scheme, gene))
+    gene_origin = Point(drawable.origin.x + STROKE_WIDTH, drawable.origin.y + SPECIES_HEIGHT)
+    for gene in drawable.genome.genes:
+        gene_origin = draw_gene(gene, gene_origin, drawing, get_gene_color(drawable.color_scheme, gene))
 
 
 def draw_gene(gene: Gene, origin: Point, drawing: draw.Drawing, color: str) -> Point:
@@ -75,7 +75,7 @@ def draw_gene(gene: Gene, origin: Point, drawing: draw.Drawing, color: str) -> P
     #                               310, 255,
     #                               250, 280, close=False, fill='#ffffff'))
     #     drawing.save_svg(svg)
-    return Point(origin.x + gene.scaled_length * SCALE_FACTOR + STROKE_WIDTH, origin.y)
+    return Point(origin.x + gene.scaled_length * SCALE_FACTOR , origin.y)
 
 
 def save_drawing(drawing: draw.Drawing, filepath: str):

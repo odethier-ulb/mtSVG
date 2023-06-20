@@ -30,7 +30,7 @@ class MtGenome:
         return sum([g.scaled_length for g in self.genes])
 
 
-def __parse_gff(filepath: str) -> List[Gene]:
+def parse_gff(filepath: str, reverse: bool = False) -> List[Gene]:
     genes = []
     with open(filepath, 'rt') as f:
         for line in f:
@@ -38,17 +38,14 @@ def __parse_gff(filepath: str) -> List[Gene]:
             if len(lsplt) < 9 or lsplt[2].lower() not in GENE_CLASSES:
                 continue
             genes.append(Gene(lsplt[8].split('=')[-1].lower(), lsplt[6], int(lsplt[3]), int(lsplt[4])))
+    if reverse:
+        genes.reverse()
     return genes
 
 
-def get_genomes(species: List[Tuple[str, int, str]], reverse: bool = False, start: str = 'cox1',
+def get_genomes(species: List[Tuple[str, int, str, bool]], start: str = 'cox1',
                 intergenic: int = 100) -> List[MtGenome]:
-    genomes, max_length = [MtGenome(sp[0], sp[1], __parse_gff(sp[2])) for sp in species], -1
-
-    # reverse
-    if reverse:
-        for genome in genomes:
-            genome.genes.reverse()
+    genomes, max_length = [MtGenome(sp[0], sp[1], parse_gff(sp[2], sp[3])) for sp in species], -1
 
     # align to start gene
     for genome in genomes:
