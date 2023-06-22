@@ -113,9 +113,11 @@ if __name__ == '__main__':
 
     from lib.GffParser import get_genomes
 
+
     genomes = get_genomes([('Polyandrocarpa zorritensis', 14224, 'example2.gff', False),
                            ('Botryllus schlosseri', 14934, 'example1.gff', True)],
                           'cox2', 0)
+
 
     draw_ribbons(genomes, args.svg)
 

@@ -16,7 +16,7 @@ COLOR_SCHEMES = {'default': {'co': '#f2ed8d', 'na': '#b6e07b', 'atp': '#b3e6e8',
 
 SCALE_FACTOR = 50
 STROKE_WIDTH = 5
-PIXEL_SCALE = 2
+PIXEL_SCALE = 1.5
 INTER_GENOME_SPACE = 50
 INTRA_GENOME_SPACE = 10
 GENE_HEIGHT = 150
@@ -36,6 +36,7 @@ class Point:
 class DrawableGenome:
     origin: Point
     color_scheme: dict
+    font: str
     genome: MtGenome
 
 
@@ -43,10 +44,10 @@ def get_color(color_scheme: dict, key: str) -> str:
     return next((color_scheme[k] for k in color_scheme if key.lower().startswith(k)), '#ffffff')
 
 
-def get_drawables(genomes: List[MtGenome], color_scheme: dict) -> List[DrawableGenome]:
+def get_drawables(genomes: List[MtGenome], color_scheme: dict, font: str) -> List[DrawableGenome]:
     drawables = []
     for i in range(len(genomes)):
-        drawables.append(DrawableGenome(Point(0, i * RIBBON_HEIGHT), color_scheme, genomes[i]))
+        drawables.append(DrawableGenome(Point(0, i * RIBBON_HEIGHT), color_scheme, font, genomes[i]))
     return drawables
 
 
@@ -58,6 +59,17 @@ def get_drawing(drawables: List[DrawableGenome]) -> draw.Drawing:
 
 
 def draw_genome(drawable: DrawableGenome, drawing: draw.Drawing):
+    # draw species
+    species_font_size = int(SPECIES_HEIGHT * 0.75)
+    drawing.append(draw.Text(drawable.genome.species, species_font_size,
+                             drawable.origin.x,
+                             drawable.origin.y + species_font_size,
+                             font_family=drawable.font, font_style='italic', font_weight='bold'))
+    drawing.append(draw.Text(f'({drawable.genome.length} bp)', species_font_size,
+                             drawable.origin.x + len(drawable.genome.species) * ((species_font_size / 2.) + 0.5),
+                             drawable.origin.y + species_font_size,
+                             font_family=drawable.font))
+    # draw genes
     gene_origin = Point(drawable.origin.x + STROKE_WIDTH, drawable.origin.y + SPECIES_HEIGHT)
     for gene in drawable.genome.genes:
         gene_origin = draw_gene(gene, gene_origin, drawing, drawable.color_scheme)
@@ -91,7 +103,7 @@ def save_drawing(drawing: draw.Drawing, filepath: str):
 
 
 def draw_ribbons(genomes: List[MtGenome], filepath: str):
-    drawables = get_drawables(genomes, COLOR_SCHEMES['default'])
+    drawables = get_drawables(genomes, COLOR_SCHEMES['default'], 'Arial')
     drawing = get_drawing(drawables)
 
     for drawable in drawables:
