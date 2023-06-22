@@ -60,26 +60,33 @@ def get_drawing(drawables: List[DrawableGenome]) -> draw.Drawing:
 
 def draw_genome(drawable: DrawableGenome, drawing: draw.Drawing):
     # draw species
-    species_font_size = int(SPECIES_HEIGHT * 0.75)
-    drawing.append(draw.Text(drawable.genome.species, species_font_size,
+    species_font_size = SPECIES_HEIGHT * 0.75
+    drawing.append(draw.Text(drawable.genome.species + f' ({drawable.genome.length:,} bp)', species_font_size,
                              drawable.origin.x,
                              drawable.origin.y + species_font_size,
                              font_family=drawable.font, font_style='italic', font_weight='bold'))
-    drawing.append(draw.Text(f'({drawable.genome.length} bp)', species_font_size,
-                             drawable.origin.x + len(drawable.genome.species) * ((species_font_size / 2.) + 0.5),
-                             drawable.origin.y + species_font_size,
-                             font_family=drawable.font))
     # draw genes
     gene_origin = Point(drawable.origin.x + STROKE_WIDTH, drawable.origin.y + SPECIES_HEIGHT)
     for gene in drawable.genome.genes:
-        gene_origin = draw_gene(gene, gene_origin, drawing, drawable.color_scheme)
+        gene_origin = draw_gene(gene, gene_origin, drawing, drawable.color_scheme, True, drawable.font)
 
 
-def draw_gene(gene: Gene, origin: Point, drawing: draw.Drawing, color_scheme: dict, with_orient: bool = True) -> Point:
+def draw_gene(gene: Gene, origin: Point, drawing: draw.Drawing, color_scheme: dict, with_orient: bool, font: str) -> Point:
     # draw gene
     drawing.append(draw.Rectangle(origin.x, origin.y,
                                   gene.scaled_length * SCALE_FACTOR, GENE_HEIGHT,
                                   fill=get_color(color_scheme, gene.name), stroke='black', stroke_width=STROKE_WIDTH))
+
+    # draw gene name
+    font_size = GENE_HEIGHT / 3
+    gene_size = len(gene.name) * font_size / 2
+    font_x = origin.x + ((gene.scaled_length * SCALE_FACTOR) - gene_size) / 2
+    font_y = origin.y + (GENE_HEIGHT + font_size * 0.75) / 2
+
+    if gene_size < gene.scaled_length * SCALE_FACTOR:
+        drawing.append(draw.Text(gene.name, font_size, font_x, font_y, font_family=font))
+
+
     # draw orientation
     if with_orient and gene.name != 'intergenic':
         orientation_color = get_color(color_scheme, gene.orientation)
@@ -89,7 +96,10 @@ def draw_gene(gene: Gene, origin: Point, drawing: draw.Drawing, color_scheme: di
                                           (gene.scaled_length - 1) * SCALE_FACTOR, ORIENTATION_HEIGHT,
                                           fill=orientation_color))
             origin_x += (gene.scaled_length - 1) * SCALE_FACTOR if gene.orientation == '+' else 0
+        # draw arrow
         arrow_x = origin_x + SCALE_FACTOR if gene.orientation == '+' else origin_x - SCALE_FACTOR
+        # - fix small gap between rectangle and arrow -
+        #origin_x -= 1 if gene.orientation == '+' else -1
         drawing.append(draw.Lines(origin_x, origin.y + GENE_HEIGHT + INTRA_GENOME_SPACE,
                                   arrow_x, origin.y + GENE_HEIGHT + INTRA_GENOME_SPACE + ORIENTATION_HEIGHT / 2,
                                   origin_x, origin.y + GENE_HEIGHT + INTRA_GENOME_SPACE + ORIENTATION_HEIGHT,

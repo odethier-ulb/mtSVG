@@ -115,7 +115,8 @@ if __name__ == '__main__':
 
 
     genomes = get_genomes([('Polyandrocarpa zorritensis', 14224, 'example2.gff', False),
-                           ('Botryllus schlosseri', 14934, 'example1.gff', True)],
+                           ('Botryllus schlosseri', 14934, 'example1.gff', True),
+                           ('Dendrodoa grossularia', 14316, 'example3.gff', True)],
                           'cox2', 0)
 
 

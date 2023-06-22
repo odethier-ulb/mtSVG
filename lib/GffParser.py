@@ -41,8 +41,7 @@ def parse_gff(filepath: str) -> List[Gene]:
     return genes
 
 
-def get_genomes(species: List[Tuple[str, int, str, bool]], start: str = 'cox1',
-                intergenic: int = 100) -> List[MtGenome]:
+def get_genomes(species: List[Tuple[str, int, str, bool]], start: str, intergenic: int) -> List[MtGenome]:
     genomes, max_length = [MtGenome(sp[0], sp[1], parse_gff(sp[2])) for sp in species], -1
 
     # add intergenic regions
