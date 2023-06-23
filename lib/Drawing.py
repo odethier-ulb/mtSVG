@@ -19,7 +19,7 @@ STROKE_WIDTH = 5
 PIXEL_SCALE = 1.5
 INTER_GENOME_SPACE = 50
 INTRA_GENOME_SPACE = 10
-GENE_HEIGHT = 150
+GENE_HEIGHT = 160
 ORIENTATION_HEIGHT = 30
 SPECIES_HEIGHT = 80
 
@@ -58,6 +58,15 @@ def get_drawing(drawables: List[DrawableGenome]) -> draw.Drawing:
     return draw.Drawing(width, height)
 
 
+def get_clean_name(gene_name: str) -> str:
+    if gene_name is None or len(gene_name) < 1:
+        return gene_name
+    elif gene_name.lower().startswith('trn'):
+        return 'trn' + gene_name[3].upper()
+    else:
+        return gene_name.split('_')[0].split('-')[0]
+
+
 def draw_genome(drawable: DrawableGenome, drawing: draw.Drawing):
     # draw species
     species_font_size = SPECIES_HEIGHT * 0.75
@@ -78,14 +87,24 @@ def draw_gene(gene: Gene, origin: Point, drawing: draw.Drawing, color_scheme: di
                                   fill=get_color(color_scheme, gene.name), stroke='black', stroke_width=STROKE_WIDTH))
 
     # draw gene name
-    font_size = GENE_HEIGHT / 3
-    gene_size = len(gene.name) * font_size / 2
-    font_x = origin.x + ((gene.scaled_length * SCALE_FACTOR) - gene_size) / 2
-    font_y = origin.y + (GENE_HEIGHT + font_size * 0.75) / 2
+    gene_name = get_clean_name(gene.name)
+    font_size = int(GENE_HEIGHT / 3)
+    gene_size = len(gene_name) * font_size / 2
 
     if gene_size < gene.scaled_length * SCALE_FACTOR:
-        drawing.append(draw.Text(gene.name, font_size, font_x, font_y, font_family=font))
+        drawing.append(draw.Text(gene_name, font_size,
+                                 origin.x + ((gene.scaled_length * SCALE_FACTOR) - gene_size) / 2,
+                                 origin.y + (GENE_HEIGHT + font_size * 0.75) / 2,
+                                 font_family=font))
+    else:
+        if gene_size > GENE_HEIGHT:
+            font_size = int(2 * GENE_HEIGHT / len(gene_name))
+            gene_size = len(gene_name) * font_size / 2
 
+        txt_x = origin.x + ((gene.scaled_length * SCALE_FACTOR) + font_size * 0.7) / 2
+        txt_y = origin.y + (GENE_HEIGHT + gene_size) / 2
+        drawing.append(draw.Text(gene_name, font_size, txt_x, txt_y,
+                                 font_family=font, transform=f'rotate(270, {txt_x}, {txt_y})'))
 
     # draw orientation
     if with_orient and gene.name != 'intergenic':
@@ -98,8 +117,6 @@ def draw_gene(gene: Gene, origin: Point, drawing: draw.Drawing, color_scheme: di
             origin_x += (gene.scaled_length - 1) * SCALE_FACTOR if gene.orientation == '+' else 0
         # draw arrow
         arrow_x = origin_x + SCALE_FACTOR if gene.orientation == '+' else origin_x - SCALE_FACTOR
-        # - fix small gap between rectangle and arrow -
-        #origin_x -= 1 if gene.orientation == '+' else -1
         drawing.append(draw.Lines(origin_x, origin.y + GENE_HEIGHT + INTRA_GENOME_SPACE,
                                   arrow_x, origin.y + GENE_HEIGHT + INTRA_GENOME_SPACE + ORIENTATION_HEIGHT / 2,
                                   origin_x, origin.y + GENE_HEIGHT + INTRA_GENOME_SPACE + ORIENTATION_HEIGHT,
