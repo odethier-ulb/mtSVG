@@ -264,7 +264,11 @@ if __name__ == '__main__':
     parser.add_argument('--size', type=int, help='The size of the mtDNA in base pair (ignored if --gffs is used)')
     parser.add_argument('--reversed', action='store_true', help='Reverse the gene order (ignored if --gffs is used')
     parser.add_argument('--gffs', type=str,
-                        help='The path of the semicolon separated config file to draw multiple ribbons.')
+                        help='The path of the semicolon separated config file to draw multiple ribbons. Each entry in '
+                             'the config file must have the following format: "species;mtdna size;gff path;reverse '
+                             'gene order" like for instance "Halocynthia roretzi;14771;example/h_roretzi.gff;false". '
+                             'Comments can be inserted using "#" to start a line and the last "true/false" value for '
+                             'the gene order can be omitted when using false.')
     parser.add_argument('--start', type=str, help='Start gene of the ribbon', default='cox1')
     parser.add_argument('--intergenic', type=int,
                         help='Display intergenic regions having a size = or >, skipped if 0 is set', default=0)
@@ -272,8 +276,8 @@ if __name__ == '__main__':
     parser.add_argument('--full_name', action='store_true', help='Display gene full names')
     parser.add_argument('--monochromatic', action='store_true', help='Do not colorize')
     parser.add_argument('--font', type=str, help='The font to use', default='Arial')
-    parser.add_argument('--output', type=str, help='The path of the output to create', default='mtSVG.svg')
-    args = parser.parse_args()
+    parser.add_argument('--output', type=str, help='The path of the output to create', default='mtDNA.svg')
+    args = parser.parse_args(args=None if sys.argv[1:] else ['--help'])
 
     if args.gff is not None:
         if args.species is None:
