@@ -75,7 +75,7 @@ def get_genomes(species: List[Tuple[str, int, str, bool]], start: str, intergeni
     for genome in genomes:
         start_idx = -1
         for i in range(0, len(genome.genes)):
-            if start in genome.genes[i].name:
+            if start.lower() in genome.genes[i].name.lower():
                 start_idx = i
                 break
         new_genes = []
@@ -251,7 +251,7 @@ def parse_gffs(filepath: str) -> List[Tuple[str, int, str, bool]]:
                 lsplt = lstrip.split(';')
                 if len(lsplt) < 4:
                     continue
-                results.append((lsplt[0], int(lsplt[1]), lsplt[2], bool(lsplt[2])))
+                results.append((lsplt[0], int(lsplt[1]), lsplt[2], bool(lsplt[3])))
         return results
     except:
         return None
