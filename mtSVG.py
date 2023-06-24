@@ -5,124 +5,289 @@ import math
 import argparse
 import sys
 import drawsvg as draw
-from lib.Drawing import draw_ribbons
+from typing import List, Tuple
+from dataclasses import dataclass
 
-gene_colors = {'co': '#f2ed8d', 'na' : '#b6e07b', 'rrn' : '#c7ace3', 'atp': '#b3e6e8', 'trn' : '#e69d97'}
+# ----------------------------- GFF PARSING -----------------------------
 
-
-def get_color(gene):
-    for k in gene_colors:
-        if gene.startswith(k):
-            return gene_colors[k]
-    return #ffffff
+GENE_CLASSES = set(['gene', 'trna', 'rrna'])
 
 
-def compute_length(start, end, mtdna_size):
-    length = end - start
-    if length < 0:
-        length = mtdna_size - start + end
-    return length
+@dataclass
+class Gene:
+    name: str
+    orientation: str
+    start: int
+    end: int
+    scaled_length: int = None
+
+    def get_length(self, genome_size) -> int:
+        length = self.end - self.start
+        if length < 0:
+            length = genome_size - self.start + self.end
+        return length
 
 
-def get_gene_list(gff_file, mtdna_size, start, reverse):
-    result, max_length = [], -9999
+@dataclass
+class MtGenome:
+    species: str
+    length: int
+    genes: list
 
-    # get gene list and size
-    with open(gff_file, 'rt') as f:
+    def get_scaled_length(self) -> int:
+        return sum([g.scaled_length for g in self.genes])
+
+
+def parse_gff(filepath: str) -> List[Gene]:
+    genes = []
+    with open(filepath, 'rt') as f:
         for line in f:
-            if not "\tgene" in line and not "\ttRNA" in line and not "\trRNA" in line:
-                continue
             lsplt = line.strip().split()
-            gene = lsplt[8].split('=')[-1]
-            length = compute_length(int(lsplt[3]), int(lsplt[4]), mtdna_size)
-            if length > max_length:
-                max_length = length
-            result.append([gene, length])
-
-    if reverse == 'true':
-        result.reverse()
-
-    # change start and order
-    start_idx = -1
-    for i in range(0, len(result)):
-        if start in result[i][0]:
-            start_idx = i
-            break
-    new_result = []
-    for i in range(start_idx, len(result)):
-        new_result.append(result[i])
-    for i in range(0, start_idx):
-        new_result.append(result[i])
-    result = new_result
-    
-    # compute graphical length
-    unit = float(max_length/10)
-    for entry in result:
-        entry.append(max(1, int(math.ceil(entry[1]/unit))) * 100)
-        
-    return result
+            if len(lsplt) < 9 or lsplt[2].lower() not in GENE_CLASSES:
+                continue
+            genes.append(Gene(lsplt[8].split('=')[-1].lower(), lsplt[6], int(lsplt[3]), int(lsplt[4])))
+    return genes
 
 
-def add_rectangle(center, width, height, gene, drawing):
-    rectangle = draw.Lines(center[0] - width/2, center[1] - height/2,
-                           center[0] + width/2, center[1] - height/2,
-                           center[0] + width/2, center[1] + height/2,
-                           center[0] - width/2, center[1] + height/2,
-                           close=True, fill=get_color(gene), stroke='black', stroke_width=10)
-    drawing.append(rectangle)
-    drawing.append(draw.Text(gene, 100, center[0] - 100, center[1] + 25))
+def get_genomes(species: List[Tuple[str, int, str, bool]], start: str, intergenic: int) -> List[MtGenome]:
+    genomes, max_length = [MtGenome(sp[0], sp[1], parse_gff(sp[2])) for sp in species], -1
+
+    # add intergenic regions
+    if intergenic > 0:
+        for genome in genomes:
+            for i in range(len(genome.genes) - 1, 0, -1):
+                if genome.genes[i].start < genome.genes[i - 1].end < genome.genes[i].end:
+                    # overlap
+                    continue
+                region_length = genome.genes[i].start - genome.genes[i - 1].end
+                if region_length < 0:
+                    region_length = genome.genes[i].start + genome.length - genome.genes[i - 1].end
+                if region_length > intergenic:
+                    genome.genes.insert(i, Gene('intergenic', None, genome.genes[i - 1].end, genome.genes[i].start))
+                    i -= 1
+
+    # reverse
+    for i in range(len(species)):
+        if species[i][3]:
+            genomes[i].genes.reverse()
+
+    # align to start gene
+    for genome in genomes:
+        start_idx = -1
+        for i in range(0, len(genome.genes)):
+            if start in genome.genes[i].name:
+                start_idx = i
+                break
+        new_genes = []
+        for i in range(start_idx, len(genome.genes)):
+            new_genes.append(genome.genes[i])
+            max_length = max(max_length, genome.genes[i].get_length(genome.length))
+        for i in range(0, start_idx):
+            new_genes.append(genome.genes[i])
+            max_length = max(max_length, genome.genes[i].get_length(genome.length))
+        genome.genes = new_genes
+
+    # compute scaled length from min 1 to max 10
+    unit = max_length / 10.
+    for genome in genomes:
+        for gene in genome.genes:
+            gene.scaled_length = max(1, int(math.ceil(gene.get_length(genome.length) / unit)))
+
+    return genomes
 
 
-def main(gff, svg, length, start, reverse):
-    genes = get_gene_list(gff, length, start, reverse)
+# ----------------------------- DRAWING -----------------------------
 
-    if len(genes) == 0:
-        sys.exit('Error : no gene found')
-   
-    width = sum([gene[2] for gene in genes])
-    center = [-width/2 + genes[0][2] / 2, 0]
+COLOR_SCHEMES = {'default': {'co': '#f2ed8d', 'na': '#b6e07b', 'atp': '#b3e6e8',
+                             'rrn': '#c7ace3',
+                             'trn': '#e69d97',
+                             'intergenic': '#000000',
+                             '+': '#a8d2e7', '-': '#ac759a'},
+                 'monochromatic': {'co': '#ffffff', 'na': '#ffffff', 'atp': '#ffffff',
+                                   'rrn': '#ffffff',
+                                   'trn': '#ffffff',
+                                   'intergenic': '#000000',
+                                   '+': '#000000', '-': '#000000'}}
 
-    d = draw.Drawing(width + 500, 500, origin='center')
+SCALE_FACTOR = 50
+STROKE_WIDTH = 5
+PIXEL_SCALE = 0.3
+INTER_GENOME_SPACE = 50
+INTRA_GENOME_SPACE = 10
+GENE_HEIGHT = 160
+ORIENTATION_HEIGHT = 30
+SPECIES_HEIGHT = 80
 
-    for i in range(len(genes)):
-        gene = genes[i]
-        add_rectangle(center, gene[2], 400, gene[0], d)
-        if i < len(genes) - 1:
-            center[0] += gene[2] / 2 + genes[i+1][2] / 2 
+RIBBON_HEIGHT = GENE_HEIGHT + ORIENTATION_HEIGHT + INTRA_GENOME_SPACE + INTER_GENOME_SPACE + SPECIES_HEIGHT
 
-    d.set_pixel_scale(2)
-    d.save_svg(svg)
+
+@dataclass
+class Point:
+    x: int
+    y: int
+
+
+@dataclass
+class DrawableGenome:
+    origin: Point
+    color_scheme: dict
+    font: str
+    full_name: bool
+    oriented: bool
+    genome: MtGenome
+
+
+def get_color(color_scheme: dict, key: str) -> str:
+    return next((color_scheme[k] for k in color_scheme if key.lower().startswith(k)), '#ffffff')
+
+
+def get_drawing(drawables: List[DrawableGenome]) -> draw.Drawing:
+    width = max([(drawable.genome.get_scaled_length() * SCALE_FACTOR) + len(drawable.genome.genes) * STROKE_WIDTH
+                 for drawable in drawables])
+    height = RIBBON_HEIGHT * len(drawables)
+    return draw.Drawing(width, height)
+
+
+def get_clean_name(gene_name: str) -> str:
+    try:
+        if gene_name.lower().startswith('trn'):
+            return 'trn' + gene_name[3].upper()
+        else:
+            return gene_name.split('_')[0].split('-')[0]
+    except:
+        return gene_name
+
+
+def draw_genome(drawable: DrawableGenome, drawing: draw.Drawing):
+    # draw species
+    species_font_size = SPECIES_HEIGHT * 0.75
+    drawing.append(draw.Text(drawable.genome.species + f' ({drawable.genome.length:,} bp)', species_font_size,
+                             drawable.origin.x,
+                             drawable.origin.y + species_font_size,
+                             font_family=drawable.font,
+                             font_style='italic',
+                             font_weight='bold'))
+    # draw genes
+    gene_origin = Point(drawable.origin.x + STROKE_WIDTH, drawable.origin.y + SPECIES_HEIGHT)
+    for gene in drawable.genome.genes:
+        gene_origin = draw_gene(drawable, gene, gene_origin, drawing)
+
+
+def draw_gene(drawable: DrawableGenome, gene: Gene, origin: Point, drawing: draw.Drawing) -> Point:
+    # draw gene
+    drawing.append(draw.Rectangle(origin.x, origin.y,
+                                  gene.scaled_length * SCALE_FACTOR, GENE_HEIGHT,
+                                  fill=get_color(drawable.color_scheme, gene.name),
+                                  stroke='black',
+                                  stroke_width=STROKE_WIDTH))
+
+    # draw gene name
+    gene_name = gene.name if drawable.full_name else get_clean_name(gene.name)
+    font_size = int(GENE_HEIGHT / 3)
+    gene_size = len(gene_name) * font_size / 2
+
+    if gene_size < gene.scaled_length * SCALE_FACTOR:
+        drawing.append(draw.Text(gene_name, font_size,
+                                 origin.x + ((gene.scaled_length * SCALE_FACTOR) - gene_size) / 2,
+                                 origin.y + (GENE_HEIGHT + font_size * 0.75) / 2,
+                                 font_family=drawable.font))
+    else:
+        if gene_size > GENE_HEIGHT:
+            font_size = int(2 * GENE_HEIGHT / len(gene_name))
+            gene_size = len(gene_name) * font_size / 2
+
+        txt_x = origin.x + ((gene.scaled_length * SCALE_FACTOR) + font_size * 0.7) / 2
+        txt_y = origin.y + (GENE_HEIGHT + gene_size) / 2
+        drawing.append(draw.Text(gene_name, font_size, txt_x, txt_y,
+                                 font_family=drawable.font,
+                                 transform=f'rotate(270, {txt_x}, {txt_y})'))
+
+    # draw orientation
+    if drawable.oriented and gene.name != 'intergenic':
+        orientation_color = get_color(drawable.color_scheme, gene.orientation)
+        origin_x = origin.x if gene.orientation == '+' else origin.x + SCALE_FACTOR
+        if gene.scaled_length > 1:
+            drawing.append(draw.Rectangle(origin_x, origin.y + GENE_HEIGHT + INTRA_GENOME_SPACE,
+                                          (gene.scaled_length - 1) * SCALE_FACTOR, ORIENTATION_HEIGHT,
+                                          fill=orientation_color))
+            origin_x += (gene.scaled_length - 1) * SCALE_FACTOR if gene.orientation == '+' else 0
+        # draw arrow
+        arrow_x = origin_x + SCALE_FACTOR if gene.orientation == '+' else origin_x - SCALE_FACTOR
+        drawing.append(draw.Lines(origin_x, origin.y + GENE_HEIGHT + INTRA_GENOME_SPACE,
+                                  arrow_x, origin.y + GENE_HEIGHT + INTRA_GENOME_SPACE + ORIENTATION_HEIGHT / 2,
+                                  origin_x, origin.y + GENE_HEIGHT + INTRA_GENOME_SPACE + ORIENTATION_HEIGHT,
+                                  close=False,
+                                  fill=orientation_color))
+    return Point(origin.x + gene.scaled_length * SCALE_FACTOR, origin.y)
+
+
+def draw_ribbons(genomes: List[MtGenome], output: str,
+                 monochromatic: bool = False,
+                 font: str = 'Arial',
+                 full_name: bool = False,
+                 oriented: bool = False):
+    drawables, color_scheme = [], COLOR_SCHEMES['monochromatic'] if monochromatic else COLOR_SCHEMES['default']
+    for i in range(len(genomes)):
+        drawables.append(DrawableGenome(Point(0, i * RIBBON_HEIGHT),
+                                        color_scheme, font, full_name, oriented,
+                                        genomes[i]))
+    drawing = get_drawing(drawables)
+    for drawable in drawables:
+        draw_genome(drawable, drawing)
+    drawing.set_pixel_scale(PIXEL_SCALE)
+    drawing.save_svg(output)
+
+
+# ----------------------------- MAIN -----------------------------
+
+def parse_gffs(filepath: str) -> List[Tuple[str, int, str, bool]]:
+    try:
+        results = []
+        with open(filepath, 'rt') as f:
+            for line in f:
+                lstrip = line.strip()
+                if lstrip.startswith('#'):
+                    continue
+                lsplt = lstrip.split(';')
+                if len(lsplt) < 4:
+                    continue
+                results.append((lsplt[0], int(lsplt[1]), lsplt[2], bool(lsplt[2])))
+        return results
+    except:
+        return None
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Convert a MITOS2 mtDNA GFF to a linear SVG representation')
-    parser.add_argument('--gff', type=str, help='The path to the gff file')
-    parser.add_argument('--svg', type=str, help='The path of the SVG to create', default='linear_mtdna.svg')
-    parser.add_argument('--length', type=int, help='The mtDNA length in bp (used to scale the output)')
-    parser.add_argument('--start', type=str, help='Gene to use at the start of the ribbon', default='cox1')
-    parser.add_argument('--reverse', type=str, help='If true, the gene order in the gff is reversed', default='false')
+    parser.add_argument('--gff', type=str, help='The path of a single gff file')
+    parser.add_argument('--species', type=str, help='The species name (ignored if --gffs is used)')
+    parser.add_argument('--size', type=int, help='The size of the mtDNA in base pair (ignored if --gffs is used)')
+    parser.add_argument('--reversed', action='store_true', help='Reverse the gene order (ignored if --gffs is used')
+    parser.add_argument('--gffs', type=str,
+                        help='The path of the semicolon separated config file to draw multiple ribbons.')
+    parser.add_argument('--start', type=str, help='Start gene of the ribbon', default='cox1')
+    parser.add_argument('--intergenic', type=int,
+                        help='Display intergenic regions having a size = or >, skipped if 0 is set', default=0)
+    parser.add_argument('--oriented', action='store_true', help='Display gene orientations')
+    parser.add_argument('--full_name', action='store_true', help='Display gene full names')
+    parser.add_argument('--monochromatic', action='store_true', help='Do not colorize')
+    parser.add_argument('--font', type=str, help='The font to use', default='Arial')
+    parser.add_argument('--output', type=str, help='The path of the output to create', default='mtSVG.svg')
     args = parser.parse_args()
 
-    if args.gff is None:
-        sys.exit('Error : no gff file')
+    if args.gff is not None:
+        if args.species is None:
+            sys.exit('Error : missing species')
+        if args.size is None:
+            sys.exit('Error : missing size')
+        gffs = [(args.species, args.size, args.gff, args.reversed)]
+    elif args.gffs is not None:
+        gffs = parse_gffs(args.gffs)
+        if gffs is None:
+            sys.exit('Error : wrong gffs file format')
+    else:
+        sys.exit('Error : missing gff(s) file')
 
-    if args.length is None:
-        sys.exit('Error : no mtDNA length')
-
-    #------- TEST --------#
-
-    from lib.GffParser import get_genomes
-
-
-    genomes = get_genomes([('Polyandrocarpa zorritensis', 14224, 'example2.gff', False),
-                           ('Botryllus schlosseri', 14934, 'example1.gff', True),
-                           ('Dendrodoa grossularia', 14316, 'example3.gff', False), ('Test', 15227, 'test.gff', False)],
-                          'cox2', 0)
-
-
-    draw_ribbons(genomes, args.svg)
-
-
-    #main(args.gff, args.svg, args.length, args.start, args.reverse)
-    #draw_test(args.svg)
+    genomes = get_genomes(gffs, args.start, args.intergenic)
+    draw_ribbons(genomes, args.output, args.monochromatic, args.font, args.full_name, args.oriented)
     print('Done !')
