@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1624.5" height="297.0" viewBox="0 0 5415 990">
+<defs>
+</defs>
+<text x="0" y="60.0" font-size="60.0" font-family="Times New Roman" font-style="italic" font-weight="bold">Ciona savignyi (14,737 bp)</text>
+<rect x="5" y="80" width="200" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="52.0" y="179.875" font-size="53" font-family="Times New Roman">cox2</text>
+<rect x="5" y="250" width="150" height="30" fill="#000000" />
+<path d="M155,250 L205,265.0 L155,280" fill="#000000" />
+<rect x="205" y="80" width="350" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="340.25" y="179.875" font-size="53" font-family="Times New Roman">cob</text>
+<rect x="205" y="250" width="300" height="30" fill="#000000" />
+<path d="M505,250 L555,265.0 L505,280" fill="#000000" />
+<rect x="555" y="80" width="300" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="652.0" y="179.875" font-size="53" font-family="Times New Roman">nad1</text>
+<rect x="555" y="250" width="250" height="30" fill="#000000" />
+<path d="M805,250 L855,265.0 L805,280" fill="#000000" />
+<rect x="855" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="892.25" y="238.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 892.25, 238.75)">trnp(tgg)</text>
+<path d="M855,250 L905,265.0 L855,280" fill="#000000" />
+<rect x="905" y="80" width="100" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="973.55" y="226.25" font-size="53" font-family="Times New Roman" transform="rotate(270, 973.55, 226.25)">nad4l</text>
+<rect x="905" y="250" width="50" height="30" fill="#000000" />
+<path d="M955,250 L1005,265.0 L955,280" fill="#000000" />
+<rect x="1005" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1042.25" y="238.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 1042.25, 238.75)">trnh(gtg)</text>
+<path d="M1005,250 L1055,265.0 L1005,280" fill="#000000" />
+<rect x="1055" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1092.25" y="238.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 1092.25, 238.75)">trnr(tcg)</text>
+<path d="M1055,250 L1105,265.0 L1055,280" fill="#000000" />
+<rect x="1105" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1142.25" y="238.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 1142.25, 238.75)">trnq(ttg)</text>
+<path d="M1105,250 L1155,265.0 L1105,280" fill="#000000" />
+<rect x="1155" y="80" width="250" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1227.0" y="179.875" font-size="53" font-family="Times New Roman">cox3</text>
+<rect x="1155" y="250" width="200" height="30" fill="#000000" />
+<path d="M1355,250 L1405,265.0 L1355,280" fill="#000000" />
+<rect x="1405" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1442.25" y="238.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 1442.25, 238.75)">trnk(ttt)</text>
+<path d="M1405,250 L1455,265.0 L1405,280" fill="#000000" />
+<rect x="1455" y="80" width="50" height="160" fill="#000000" stroke="black" stroke-width="5" />
+<text x="1491.2" y="240.0" font-size="32" font-family="Times New Roman" transform="rotate(270, 1491.2, 240.0)">intergenic</text>
+<rect x="1505" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1544.0" y="240.0" font-size="40" font-family="Times New Roman" transform="rotate(270, 1544.0, 240.0)">rrnl_0-a</text>
+<path d="M1505,250 L1555,265.0 L1505,280" fill="#000000" />
+<rect x="1555" y="80" width="100" height="160" fill="#000000" stroke="black" stroke-width="5" />
+<text x="1616.2" y="240.0" font-size="32" font-family="Times New Roman" transform="rotate(270, 1616.2, 240.0)">intergenic</text>
+<rect x="1655" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1694.0" y="240.0" font-size="40" font-family="Times New Roman" transform="rotate(270, 1694.0, 240.0)">rrnl_1-a</text>
+<path d="M1655,250 L1705,265.0 L1655,280" fill="#000000" />
+<rect x="1705" y="80" width="50" height="160" fill="#000000" stroke="black" stroke-width="5" />
+<text x="1741.2" y="240.0" font-size="32" font-family="Times New Roman" transform="rotate(270, 1741.2, 240.0)">intergenic</text>
+<rect x="1755" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1794.0" y="240.0" font-size="40" font-family="Times New Roman" transform="rotate(270, 1794.0, 240.0)">rrnl_1-b</text>
+<path d="M1755,250 L1805,265.0 L1755,280" fill="#000000" />
+<rect x="1805" y="80" width="100" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1869.0" y="240.0" font-size="40" font-family="Times New Roman" transform="rotate(270, 1869.0, 240.0)">rrnl_0-b</text>
+<rect x="1805" y="250" width="50" height="30" fill="#000000" />
+<path d="M1855,250 L1905,265.0 L1855,280" fill="#000000" />
+<rect x="1905" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1942.25" y="238.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 1942.25, 238.75)">trni(gat)</text>
+<path d="M1905,250 L1955,265.0 L1905,280" fill="#000000" />
+<rect x="1955" y="80" width="150" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1977.0" y="179.875" font-size="53" font-family="Times New Roman">nad3</text>
+<rect x="1955" y="250" width="100" height="30" fill="#000000" />
+<path d="M2055,250 L2105,265.0 L2055,280" fill="#000000" />
+<rect x="2105" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="2142.25" y="238.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 2142.25, 238.75)">trne(ttc)</text>
+<path d="M2105,250 L2155,265.0 L2105,280" fill="#000000" />
+<rect x="2155" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="2192.25" y="238.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 2192.25, 238.75)">trnv(tac)</text>
+<path d="M2155,250 L2205,265.0 L2155,280" fill="#000000" />
+<rect x="2205" y="80" width="400" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="2352.0" y="179.875" font-size="53" font-family="Times New Roman">nad4</text>
+<rect x="2205" y="250" width="350" height="30" fill="#000000" />
+<path d="M2555,250 L2605,265.0 L2555,280" fill="#000000" />
+<rect x="2605" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="2642.25" y="238.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 2642.25, 238.75)">trnf(gaa)</text>
+<path d="M2605,250 L2655,265.0 L2605,280" fill="#000000" />
+<rect x="2655" y="80" width="100" height="160" fill="#000000" stroke="black" stroke-width="5" />
+<text x="2716.2" y="240.0" font-size="32" font-family="Times New Roman" transform="rotate(270, 2716.2, 240.0)">intergenic</text>
+<rect x="2755" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="2790.15" y="239.75" font-size="29" font-family="Times New Roman" transform="rotate(270, 2790.15, 239.75)">trng_1(tct)</text>
+<path d="M2755,250 L2805,265.0 L2755,280" fill="#000000" />
+<rect x="2805" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="2842.25" y="238.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 2842.25, 238.75)">trny(gta)</text>
+<path d="M2805,250 L2855,265.0 L2805,280" fill="#000000" />
+<rect x="2855" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="2891.2" y="240.0" font-size="32" font-family="Times New Roman" transform="rotate(270, 2891.2, 240.0)">trnl1(tag)</text>
+<path d="M2855,250 L2905,265.0 L2855,280" fill="#000000" />
+<rect x="2905" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="2941.2" y="240.0" font-size="32" font-family="Times New Roman" transform="rotate(270, 2941.2, 240.0)">trns2(tga)</text>
+<path d="M2905,250 L2955,265.0 L2905,280" fill="#000000" />
+<rect x="2955" y="80" width="450" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3127.0" y="179.875" font-size="53" font-family="Times New Roman">cox1</text>
+<rect x="2955" y="250" width="400" height="30" fill="#000000" />
+<path d="M3355,250 L3405,265.0 L3355,280" fill="#000000" />
+<rect x="3405" y="80" width="500" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3602.0" y="179.875" font-size="53" font-family="Times New Roman">nad5</text>
+<rect x="3405" y="250" width="450" height="30" fill="#000000" />
+<path d="M3855,250 L3905,265.0 L3855,280" fill="#000000" />
+<rect x="3905" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3942.25" y="238.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 3942.25, 238.75)">trnd(gtc)</text>
+<path d="M3905,250 L3955,265.0 L3905,280" fill="#000000" />
+<rect x="3955" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3991.2" y="240.0" font-size="32" font-family="Times New Roman" transform="rotate(270, 3991.2, 240.0)">trnl2(taa)</text>
+<path d="M3955,250 L4005,265.0 L3955,280" fill="#000000" />
+<rect x="4005" y="80" width="200" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4052.0" y="179.875" font-size="53" font-family="Times New Roman">rrns</text>
+<rect x="4005" y="250" width="150" height="30" fill="#000000" />
+<path d="M4155,250 L4205,265.0 L4155,280" fill="#000000" />
+<rect x="4205" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4242.25" y="238.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 4242.25, 238.75)">trnm(cat)</text>
+<path d="M4205,250 L4255,265.0 L4205,280" fill="#000000" />
+<rect x="4255" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4292.25" y="238.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 4292.25, 238.75)">trnt(tgt)</text>
+<path d="M4255,250 L4305,265.0 L4255,280" fill="#000000" />
+<rect x="4305" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4342.25" y="238.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 4342.25, 238.75)">trnw(tca)</text>
+<path d="M4305,250 L4355,265.0 L4305,280" fill="#000000" />
+<rect x="4355" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4391.2" y="240.0" font-size="32" font-family="Times New Roman" transform="rotate(270, 4391.2, 240.0)">trns1(gct)</text>
+<path d="M4355,250 L4405,265.0 L4355,280" fill="#000000" />
+<rect x="4405" y="80" width="150" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4427.0" y="179.875" font-size="53" font-family="Times New Roman">nad6</text>
+<rect x="4405" y="250" width="100" height="30" fill="#000000" />
+<path d="M4505,250 L4555,265.0 L4505,280" fill="#000000" />
+<rect x="4555" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4590.15" y="239.75" font-size="29" font-family="Times New Roman" transform="rotate(270, 4590.15, 239.75)">trng_0(tcc)</text>
+<path d="M4555,250 L4605,265.0 L4555,280" fill="#000000" />
+<rect x="4605" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4642.25" y="238.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 4642.25, 238.75)">trnn(gtt)</text>
+<path d="M4605,250 L4655,265.0 L4605,280" fill="#000000" />
+<rect x="4655" y="80" width="200" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4702.0" y="179.875" font-size="53" font-family="Times New Roman">atp6</text>
+<rect x="4655" y="250" width="150" height="30" fill="#000000" />
+<path d="M4805,250 L4855,265.0 L4805,280" fill="#000000" />
+<rect x="4855" y="80" width="300" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4952.0" y="179.875" font-size="53" font-family="Times New Roman">nad2</text>
+<rect x="4855" y="250" width="250" height="30" fill="#000000" />
+<path d="M5105,250 L5155,265.0 L5105,280" fill="#000000" />
+<rect x="5155" y="80" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="5192.25" y="238.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 5192.25, 238.75)">trna(tgc)</text>
+<path d="M5155,250 L5205,265.0 L5155,280" fill="#000000" />
+<text x="0" y="390.0" font-size="60.0" font-family="Times New Roman" font-style="italic" font-weight="bold">Halocynthia roretzi (14,771 bp)</text>
+<rect x="5" y="410" width="200" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="52.0" y="509.875" font-size="53" font-family="Times New Roman">cox2</text>
+<rect x="5" y="580" width="150" height="30" fill="#000000" />
+<path d="M155,580 L205,595.0 L155,610" fill="#000000" />
+<rect x="205" y="410" width="200" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="252.0" y="509.875" font-size="53" font-family="Times New Roman">rrns</text>
+<rect x="205" y="580" width="150" height="30" fill="#000000" />
+<path d="M355,580 L405,595.0 L355,610" fill="#000000" />
+<rect x="405" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="442.25" y="568.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 442.25, 568.75)">trnk(ttt)</text>
+<path d="M405,580 L455,595.0 L405,610" fill="#000000" />
+<rect x="455" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="492.25" y="568.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 492.25, 568.75)">trnc(gca)</text>
+<path d="M455,580 L505,595.0 L455,610" fill="#000000" />
+<rect x="505" y="410" width="100" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="573.55" y="556.25" font-size="53" font-family="Times New Roman" transform="rotate(270, 573.55, 556.25)">nad4l</text>
+<rect x="505" y="580" width="50" height="30" fill="#000000" />
+<path d="M555,580 L605,595.0 L555,610" fill="#000000" />
+<rect x="605" y="410" width="250" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="677.0" y="509.875" font-size="53" font-family="Times New Roman">cox3</text>
+<rect x="605" y="580" width="200" height="30" fill="#000000" />
+<path d="M805,580 L855,595.0 L805,610" fill="#000000" />
+<rect x="855" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="892.25" y="568.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 892.25, 568.75)">trnd(gtc)</text>
+<path d="M855,580 L905,595.0 L855,610" fill="#000000" />
+<rect x="905" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="942.25" y="568.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 942.25, 568.75)">trng(tcc)</text>
+<path d="M905,580 L955,595.0 L905,610" fill="#000000" />
+<rect x="955" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="992.25" y="568.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 992.25, 568.75)">trnn(gtt)</text>
+<path d="M955,580 L1005,595.0 L955,610" fill="#000000" />
+<rect x="1005" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1041.2" y="570.0" font-size="32" font-family="Times New Roman" transform="rotate(270, 1041.2, 570.0)">trnl1(tag)</text>
+<path d="M1005,580 L1055,595.0 L1005,610" fill="#000000" />
+<rect x="1055" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1090.15" y="569.75" font-size="29" font-family="Times New Roman" transform="rotate(270, 1090.15, 569.75)">trnf_0(gaa)</text>
+<path d="M1055,580 L1105,595.0 L1055,610" fill="#000000" />
+<rect x="1105" y="410" width="150" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1127.0" y="509.875" font-size="53" font-family="Times New Roman">nad6</text>
+<rect x="1105" y="580" width="100" height="30" fill="#000000" />
+<path d="M1205,580 L1255,595.0 L1205,610" fill="#000000" />
+<rect x="1255" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1292.25" y="568.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 1292.25, 568.75)">trnt(tgt)</text>
+<path d="M1255,580 L1305,595.0 L1255,610" fill="#000000" />
+<rect x="1305" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1340.15" y="569.75" font-size="29" font-family="Times New Roman" transform="rotate(270, 1340.15, 569.75)">trnf_1(gaa)</text>
+<path d="M1305,580 L1355,595.0 L1305,610" fill="#000000" />
+<rect x="1355" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1392.25" y="568.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 1392.25, 568.75)">trnv(tac)</text>
+<path d="M1355,580 L1405,595.0 L1355,610" fill="#000000" />
+<rect x="1405" y="410" width="50" height="160" fill="#000000" stroke="black" stroke-width="5" />
+<text x="1441.2" y="570.0" font-size="32" font-family="Times New Roman" transform="rotate(270, 1441.2, 570.0)">intergenic</text>
+<rect x="1455" y="410" width="400" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1602.0" y="509.875" font-size="53" font-family="Times New Roman">nad4</text>
+<rect x="1455" y="580" width="350" height="30" fill="#000000" />
+<path d="M1805,580 L1855,595.0 L1805,610" fill="#000000" />
+<rect x="1855" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1892.25" y="568.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 1892.25, 568.75)">trnp(tgg)</text>
+<path d="M1855,580 L1905,595.0 L1855,610" fill="#000000" />
+<rect x="1905" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1942.25" y="568.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 1942.25, 568.75)">trna(tgc)</text>
+<path d="M1905,580 L1955,595.0 L1905,610" fill="#000000" />
+<rect x="1955" y="410" width="150" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1977.0" y="509.875" font-size="53" font-family="Times New Roman">nad3</text>
+<rect x="1955" y="580" width="100" height="30" fill="#000000" />
+<path d="M2055,580 L2105,595.0 L2055,610" fill="#000000" />
+<rect x="2105" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="2148.55" y="543.0" font-size="53" font-family="Times New Roman" transform="rotate(270, 2148.55, 543.0)">atp8</text>
+<path d="M2105,580 L2155,595.0 L2105,610" fill="#000000" />
+<rect x="2155" y="410" width="450" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="2327.0" y="509.875" font-size="53" font-family="Times New Roman">cox1</text>
+<rect x="2155" y="580" width="400" height="30" fill="#000000" />
+<path d="M2555,580 L2605,595.0 L2555,610" fill="#000000" />
+<rect x="2605" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="2641.2" y="570.0" font-size="32" font-family="Times New Roman" transform="rotate(270, 2641.2, 570.0)">trns2(tga)</text>
+<path d="M2605,580 L2655,595.0 L2605,610" fill="#000000" />
+<rect x="2655" y="410" width="200" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="2702.0" y="509.875" font-size="53" font-family="Times New Roman">atp6</text>
+<rect x="2655" y="580" width="150" height="30" fill="#000000" />
+<path d="M2805,580 L2855,595.0 L2805,610" fill="#000000" />
+<rect x="2855" y="410" width="300" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="2952.0" y="509.875" font-size="53" font-family="Times New Roman">nad1</text>
+<rect x="2855" y="580" width="250" height="30" fill="#000000" />
+<path d="M3105,580 L3155,595.0 L3105,610" fill="#000000" />
+<rect x="3155" y="410" width="350" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3277.0" y="509.875" font-size="53" font-family="Times New Roman">rrnl</text>
+<rect x="3155" y="580" width="300" height="30" fill="#000000" />
+<path d="M3455,580 L3505,595.0 L3455,610" fill="#000000" />
+<rect x="3505" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3542.25" y="568.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 3542.25, 568.75)">trnm(tat)</text>
+<path d="M3505,580 L3555,595.0 L3505,610" fill="#000000" />
+<rect x="3555" y="410" width="500" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3752.0" y="509.875" font-size="53" font-family="Times New Roman">nad5</text>
+<rect x="3555" y="580" width="450" height="30" fill="#000000" />
+<path d="M4005,580 L4055,595.0 L4005,610" fill="#000000" />
+<rect x="4055" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4091.2" y="570.0" font-size="32" font-family="Times New Roman" transform="rotate(270, 4091.2, 570.0)">trnl2(taa)</text>
+<path d="M4055,580 L4105,595.0 L4055,610" fill="#000000" />
+<rect x="4105" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4142.25" y="568.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 4142.25, 568.75)">trnq(ttg)</text>
+<path d="M4105,580 L4155,595.0 L4105,610" fill="#000000" />
+<rect x="4155" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4192.25" y="568.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 4192.25, 568.75)">trnr(tcg)</text>
+<path d="M4155,580 L4205,595.0 L4155,610" fill="#000000" />
+<rect x="4205" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4241.2" y="570.0" font-size="32" font-family="Times New Roman" transform="rotate(270, 4241.2, 570.0)">trns1(gct)</text>
+<path d="M4205,580 L4255,595.0 L4205,610" fill="#000000" />
+<rect x="4255" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4292.25" y="568.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 4292.25, 568.75)">trnh(gtg)</text>
+<path d="M4255,580 L4305,595.0 L4255,610" fill="#000000" />
+<rect x="4305" y="410" width="300" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4402.0" y="509.875" font-size="53" font-family="Times New Roman">nad2</text>
+<rect x="4305" y="580" width="250" height="30" fill="#000000" />
+<path d="M4555,580 L4605,595.0 L4555,610" fill="#000000" />
+<rect x="4605" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4642.25" y="568.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 4642.25, 568.75)">trne(ttc)</text>
+<path d="M4605,580 L4655,595.0 L4605,610" fill="#000000" />
+<rect x="4655" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4692.25" y="568.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 4692.25, 568.75)">trni(gat)</text>
+<path d="M4655,580 L4705,595.0 L4655,610" fill="#000000" />
+<rect x="4705" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4742.25" y="568.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 4742.25, 568.75)">trnw(tca)</text>
+<path d="M4705,580 L4755,595.0 L4705,610" fill="#000000" />
+<rect x="4755" y="410" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4792.25" y="568.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 4792.25, 568.75)">trny(gta)</text>
+<path d="M4755,580 L4805,595.0 L4755,610" fill="#000000" />
+<rect x="4805" y="410" width="350" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4940.25" y="509.875" font-size="53" font-family="Times New Roman">cob</text>
+<rect x="4805" y="580" width="300" height="30" fill="#000000" />
+<path d="M5105,580 L5155,595.0 L5105,610" fill="#000000" />
+<text x="0" y="720.0" font-size="60.0" font-family="Times New Roman" font-style="italic" font-weight="bold">Styela plicata (14,414 bp)</text>
+<rect x="5" y="740" width="200" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="52.0" y="839.875" font-size="53" font-family="Times New Roman">cox2</text>
+<rect x="5" y="910" width="150" height="30" fill="#000000" />
+<path d="M155,910 L205,925.0 L155,940" fill="#000000" />
+<rect x="205" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="242.25" y="898.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 242.25, 898.75)">trnt(tgt)</text>
+<path d="M205,910 L255,925.0 L205,940" fill="#000000" />
+<rect x="255" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="292.25" y="898.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 292.25, 898.75)">trnd(gtc)</text>
+<path d="M255,910 L305,925.0 L255,940" fill="#000000" />
+<rect x="305" y="740" width="300" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="402.0" y="839.875" font-size="53" font-family="Times New Roman">nad1</text>
+<rect x="305" y="910" width="250" height="30" fill="#000000" />
+<path d="M555,910 L605,925.0 L555,940" fill="#000000" />
+<rect x="605" y="740" width="100" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="673.55" y="886.25" font-size="53" font-family="Times New Roman" transform="rotate(270, 673.55, 886.25)">nad4l</text>
+<rect x="605" y="910" width="50" height="30" fill="#000000" />
+<path d="M655,910 L705,925.0 L655,940" fill="#000000" />
+<rect x="705" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="740.15" y="899.75" font-size="29" font-family="Times New Roman" transform="rotate(270, 740.15, 899.75)">trng_0(tcc)</text>
+<path d="M705,910 L755,925.0 L705,940" fill="#000000" />
+<rect x="755" y="740" width="350" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="890.25" y="839.875" font-size="53" font-family="Times New Roman">cob</text>
+<rect x="755" y="910" width="300" height="30" fill="#000000" />
+<path d="M1055,910 L1105,925.0 L1055,940" fill="#000000" />
+<rect x="1105" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1142.25" y="898.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 1142.25, 898.75)">trnc(gca)</text>
+<path d="M1105,910 L1155,925.0 L1105,940" fill="#000000" />
+<rect x="1155" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1192.25" y="898.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 1192.25, 898.75)">trna(tgc)</text>
+<path d="M1155,910 L1205,925.0 L1155,940" fill="#000000" />
+<rect x="1205" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1241.2" y="900.0" font-size="32" font-family="Times New Roman" transform="rotate(270, 1241.2, 900.0)">trns2(tga)</text>
+<path d="M1205,910 L1255,925.0 L1205,940" fill="#000000" />
+<rect x="1255" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1290.15" y="899.75" font-size="29" font-family="Times New Roman" transform="rotate(270, 1290.15, 899.75)">trnm_1(cat)</text>
+<path d="M1255,910 L1305,925.0 L1255,940" fill="#000000" />
+<rect x="1305" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1341.2" y="900.0" font-size="32" font-family="Times New Roman" transform="rotate(270, 1341.2, 900.0)">trnl1(tag)</text>
+<path d="M1305,910 L1355,925.0 L1305,940" fill="#000000" />
+<rect x="1355" y="740" width="450" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1527.0" y="839.875" font-size="53" font-family="Times New Roman">cox1</text>
+<rect x="1355" y="910" width="400" height="30" fill="#000000" />
+<path d="M1755,910 L1805,925.0 L1755,940" fill="#000000" />
+<rect x="1805" y="740" width="150" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1827.0" y="839.875" font-size="53" font-family="Times New Roman">nad6</text>
+<rect x="1805" y="910" width="100" height="30" fill="#000000" />
+<path d="M1905,910 L1955,925.0 L1905,940" fill="#000000" />
+<rect x="1955" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="1992.25" y="898.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 1992.25, 898.75)">trnr(tcg)</text>
+<path d="M1955,910 L2005,925.0 L1955,940" fill="#000000" />
+<rect x="2005" y="740" width="300" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="2102.0" y="839.875" font-size="53" font-family="Times New Roman">nad2</text>
+<rect x="2005" y="910" width="250" height="30" fill="#000000" />
+<path d="M2255,910 L2305,925.0 L2255,940" fill="#000000" />
+<rect x="2305" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="2341.2" y="900.0" font-size="32" font-family="Times New Roman" transform="rotate(270, 2341.2, 900.0)">trnl2(taa)</text>
+<path d="M2305,910 L2355,925.0 L2305,940" fill="#000000" />
+<rect x="2355" y="740" width="500" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="2552.0" y="839.875" font-size="53" font-family="Times New Roman">nad5</text>
+<rect x="2355" y="910" width="450" height="30" fill="#000000" />
+<path d="M2805,910 L2855,925.0 L2805,940" fill="#000000" />
+<rect x="2855" y="740" width="150" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="2877.0" y="839.875" font-size="53" font-family="Times New Roman">nad3</text>
+<rect x="2855" y="910" width="100" height="30" fill="#000000" />
+<path d="M2955,910 L3005,925.0 L2955,940" fill="#000000" />
+<rect x="3005" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3042.25" y="898.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 3042.25, 898.75)">trnn(gtt)</text>
+<path d="M3005,910 L3055,925.0 L3005,940" fill="#000000" />
+<rect x="3055" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3092.25" y="898.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 3092.25, 898.75)">trnw(tca)</text>
+<path d="M3055,910 L3105,925.0 L3055,940" fill="#000000" />
+<rect x="3105" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3142.25" y="898.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 3142.25, 898.75)">trnv(tac)</text>
+<path d="M3105,910 L3155,925.0 L3105,940" fill="#000000" />
+<rect x="3155" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3192.25" y="898.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 3192.25, 898.75)">trny(gta)</text>
+<path d="M3155,910 L3205,925.0 L3155,940" fill="#000000" />
+<rect x="3205" y="740" width="250" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3277.0" y="839.875" font-size="53" font-family="Times New Roman">cox3</text>
+<rect x="3205" y="910" width="200" height="30" fill="#000000" />
+<path d="M3405,910 L3455,925.0 L3405,940" fill="#000000" />
+<rect x="3455" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3492.25" y="898.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 3492.25, 898.75)">trni(gat)</text>
+<path d="M3455,910 L3505,925.0 L3455,940" fill="#000000" />
+<rect x="3505" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3541.2" y="900.0" font-size="32" font-family="Times New Roman" transform="rotate(270, 3541.2, 900.0)">trns1(gct)</text>
+<path d="M3505,910 L3555,925.0 L3505,940" fill="#000000" />
+<rect x="3555" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3592.25" y="898.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 3592.25, 898.75)">trnf(gaa)</text>
+<path d="M3555,910 L3605,925.0 L3555,940" fill="#000000" />
+<rect x="3605" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3640.15" y="899.75" font-size="29" font-family="Times New Roman" transform="rotate(270, 3640.15, 899.75)">trnm_0(tat)</text>
+<path d="M3605,910 L3655,925.0 L3605,940" fill="#000000" />
+<rect x="3655" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3692.25" y="898.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 3692.25, 898.75)">trnh(gtg)</text>
+<path d="M3655,910 L3705,925.0 L3655,940" fill="#000000" />
+<rect x="3705" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3742.25" y="898.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 3742.25, 898.75)">trnk(ttt)</text>
+<path d="M3705,910 L3755,925.0 L3705,940" fill="#000000" />
+<rect x="3755" y="740" width="200" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3802.0" y="839.875" font-size="53" font-family="Times New Roman">atp6</text>
+<rect x="3755" y="910" width="150" height="30" fill="#000000" />
+<path d="M3905,910 L3955,925.0 L3905,940" fill="#000000" />
+<rect x="3955" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="3998.55" y="873.0" font-size="53" font-family="Times New Roman" transform="rotate(270, 3998.55, 873.0)">atp8</text>
+<path d="M3955,910 L4005,925.0 L3955,940" fill="#000000" />
+<rect x="4005" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4042.25" y="898.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 4042.25, 898.75)">trnp(tgg)</text>
+<path d="M4005,910 L4055,925.0 L4005,940" fill="#000000" />
+<rect x="4055" y="740" width="400" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4202.0" y="839.875" font-size="53" font-family="Times New Roman">nad4</text>
+<rect x="4055" y="910" width="350" height="30" fill="#000000" />
+<path d="M4405,910 L4455,925.0 L4405,940" fill="#000000" />
+<rect x="4455" y="740" width="200" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4502.0" y="839.875" font-size="53" font-family="Times New Roman">rrns</text>
+<rect x="4455" y="910" width="150" height="30" fill="#000000" />
+<path d="M4605,910 L4655,925.0 L4605,940" fill="#000000" />
+<rect x="4655" y="740" width="350" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="4777.0" y="839.875" font-size="53" font-family="Times New Roman">rrnl</text>
+<rect x="4655" y="910" width="300" height="30" fill="#000000" />
+<path d="M4955,910 L5005,925.0 L4955,940" fill="#000000" />
+<rect x="5005" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="5042.25" y="898.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 5042.25, 898.75)">trnq(ttg)</text>
+<path d="M5005,910 L5055,925.0 L5005,940" fill="#000000" />
+<rect x="5055" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="5090.15" y="899.75" font-size="29" font-family="Times New Roman" transform="rotate(270, 5090.15, 899.75)">trng_1(tct)</text>
+<path d="M5055,910 L5105,925.0 L5055,940" fill="#000000" />
+<rect x="5105" y="740" width="50" height="160" fill="#ffffff" stroke="black" stroke-width="5" />
+<text x="5142.25" y="898.75" font-size="35" font-family="Times New Roman" transform="rotate(270, 5142.25, 898.75)">trne(ttc)</text>
+<path d="M5105,910 L5155,925.0 L5105,940" fill="#000000" />
+</svg>

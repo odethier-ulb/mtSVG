@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1603.5" height="99.0" viewBox="0 0 5345 330">
+<defs>
+</defs>
+<text x="0" y="60.0" font-size="60.0" font-family="Arial" font-style="italic" font-weight="bold">Styela plicata (14,414 bp)</text>
+<rect x="5" y="80" width="450" height="160" fill="#f2ed8d" stroke="black" stroke-width="5" />
+<text x="177.0" y="179.875" font-size="53" font-family="Arial">cox1</text>
+<rect x="455" y="80" width="150" height="160" fill="#b6e07b" stroke="black" stroke-width="5" />
+<text x="477.0" y="179.875" font-size="53" font-family="Arial">nad6</text>
+<rect x="605" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="648.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 648.55, 213.0)">trnR</text>
+<rect x="655" y="80" width="300" height="160" fill="#b6e07b" stroke="black" stroke-width="5" />
+<text x="752.0" y="179.875" font-size="53" font-family="Arial">nad2</text>
+<rect x="955" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="998.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 998.55, 213.0)">trnL</text>
+<rect x="1005" y="80" width="500" height="160" fill="#b6e07b" stroke="black" stroke-width="5" />
+<text x="1202.0" y="179.875" font-size="53" font-family="Arial">nad5</text>
+<rect x="1505" y="80" width="150" height="160" fill="#b6e07b" stroke="black" stroke-width="5" />
+<text x="1527.0" y="179.875" font-size="53" font-family="Arial">nad3</text>
+<rect x="1655" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="1698.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 1698.55, 213.0)">trnN</text>
+<rect x="1705" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="1748.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 1748.55, 213.0)">trnW</text>
+<rect x="1755" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="1798.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 1798.55, 213.0)">trnV</text>
+<rect x="1805" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="1848.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 1848.55, 213.0)">trnY</text>
+<rect x="1855" y="80" width="250" height="160" fill="#f2ed8d" stroke="black" stroke-width="5" />
+<text x="1927.0" y="179.875" font-size="53" font-family="Arial">cox3</text>
+<rect x="2105" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="2148.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 2148.55, 213.0)">trnI</text>
+<rect x="2155" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="2198.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 2198.55, 213.0)">trnS</text>
+<rect x="2205" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="2248.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 2248.55, 213.0)">trnF</text>
+<rect x="2255" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="2298.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 2298.55, 213.0)">trnM</text>
+<rect x="2305" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="2348.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 2348.55, 213.0)">trnH</text>
+<rect x="2355" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="2398.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 2398.55, 213.0)">trnK</text>
+<rect x="2405" y="80" width="200" height="160" fill="#b3e6e8" stroke="black" stroke-width="5" />
+<text x="2452.0" y="179.875" font-size="53" font-family="Arial">atp6</text>
+<rect x="2605" y="80" width="50" height="160" fill="#b3e6e8" stroke="black" stroke-width="5" />
+<text x="2648.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 2648.55, 213.0)">atp8</text>
+<rect x="2655" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="2698.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 2698.55, 213.0)">trnP</text>
+<rect x="2705" y="80" width="400" height="160" fill="#b6e07b" stroke="black" stroke-width="5" />
+<text x="2852.0" y="179.875" font-size="53" font-family="Arial">nad4</text>
+<rect x="3105" y="80" width="200" height="160" fill="#c7ace3" stroke="black" stroke-width="5" />
+<text x="3152.0" y="179.875" font-size="53" font-family="Arial">rrns</text>
+<rect x="3305" y="80" width="350" height="160" fill="#c7ace3" stroke="black" stroke-width="5" />
+<text x="3427.0" y="179.875" font-size="53" font-family="Arial">rrnl</text>
+<rect x="3655" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="3698.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 3698.55, 213.0)">trnQ</text>
+<rect x="3705" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="3748.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 3748.55, 213.0)">trnG</text>
+<rect x="3755" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="3798.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 3798.55, 213.0)">trnE</text>
+<rect x="3805" y="80" width="200" height="160" fill="#f2ed8d" stroke="black" stroke-width="5" />
+<text x="3852.0" y="179.875" font-size="53" font-family="Arial">cox2</text>
+<rect x="4005" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="4048.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 4048.55, 213.0)">trnT</text>
+<rect x="4055" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="4098.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 4098.55, 213.0)">trnD</text>
+<rect x="4105" y="80" width="300" height="160" fill="#b6e07b" stroke="black" stroke-width="5" />
+<text x="4202.0" y="179.875" font-size="53" font-family="Arial">nad1</text>
+<rect x="4405" y="80" width="100" height="160" fill="#b6e07b" stroke="black" stroke-width="5" />
+<text x="4473.55" y="226.25" font-size="53" font-family="Arial" transform="rotate(270, 4473.55, 226.25)">nad4l</text>
+<rect x="4505" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="4548.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 4548.55, 213.0)">trnG</text>
+<rect x="4555" y="80" width="350" height="160" fill="#f2ed8d" stroke="black" stroke-width="5" />
+<text x="4690.25" y="179.875" font-size="53" font-family="Arial">cob</text>
+<rect x="4905" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="4948.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 4948.55, 213.0)">trnC</text>
+<rect x="4955" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="4998.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 4998.55, 213.0)">trnA</text>
+<rect x="5005" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="5048.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 5048.55, 213.0)">trnS</text>
+<rect x="5055" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="5098.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 5098.55, 213.0)">trnM</text>
+<rect x="5105" y="80" width="50" height="160" fill="#e69d97" stroke="black" stroke-width="5" />
+<text x="5148.55" y="213.0" font-size="53" font-family="Arial" transform="rotate(270, 5148.55, 213.0)">trnL</text>
+</svg>
