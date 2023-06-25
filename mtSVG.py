@@ -62,7 +62,7 @@ def get_genomes(species: List[Tuple[str, int, str, bool]], start: str, intergeni
                 region_length = genome.genes[i].start - genome.genes[i - 1].end
                 if region_length < 0:
                     region_length = genome.genes[i].start + genome.length - genome.genes[i - 1].end
-                if region_length > intergenic:
+                if region_length >= intergenic:
                     genome.genes.insert(i, Gene('intergenic', None, genome.genes[i - 1].end, genome.genes[i].start))
                     i -= 1
 
