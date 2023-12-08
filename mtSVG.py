@@ -49,7 +49,7 @@ def parse_gff(filepath: str) -> List[Gene]:
     return genes
 
 
-def get_genomes(species: List[Tuple[str, int, str, bool]], start: str, intergenic: int) -> List[MtGenome]:
+def get_genomes(species: List[Tuple[str, int, str, bool]], start: str, intergenic: int, linear: bool) -> List[MtGenome]:
     genomes, max_length = [MtGenome(sp[0], sp[1], parse_gff(sp[2])) for sp in species], -1
 
     # add intergenic regions
@@ -74,6 +74,8 @@ def get_genomes(species: List[Tuple[str, int, str, bool]], start: str, intergeni
     # align to start gene
     for genome in genomes:
         start_idx = -1
+        if linear and genome.length > 0:
+            start = genome.genes[0].name
         for i in range(0, len(genome.genes)):
             if start.lower() in genome.genes[i].name.lower():
                 start_idx = i
@@ -270,6 +272,8 @@ if __name__ == '__main__':
                              'Comments can be inserted using "#" to start a line and the last "true/false" value for '
                              'the gene order can be omitted when using false.')
     parser.add_argument('--start', type=str, help='Start gene of the ribbon', default='cox1')
+    parser.add_argument('--linear', action='store_true',
+                        help='Show the genes in the same order as in the gff file.')
     parser.add_argument('--intergenic', type=int,
                         help='Display intergenic regions having a size = or >, skipped if 0 is set', default=0)
     parser.add_argument('--oriented', action='store_true', help='Display gene orientations')
@@ -292,6 +296,6 @@ if __name__ == '__main__':
     else:
         sys.exit('Error : missing gff(s) file')
 
-    genomes = get_genomes(gffs, args.start, args.intergenic)
+    genomes = get_genomes(gffs, args.start, args.intergenic, args.linear)
     draw_ribbons(genomes, args.output, args.monochromatic, args.font, args.full_name, args.oriented)
     print('Done !')
