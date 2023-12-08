@@ -38,6 +38,7 @@ optional arguments:
                         "true/false" value for the gene order can be omitted
                         when using false.
   --start START         Start gene of the ribbon
+  --linear              Show the genes in the same order as in the gff file.
   --intergenic INTERGENIC
                         Display intergenic regions having a size = or >,
                         skipped if 0 is set
