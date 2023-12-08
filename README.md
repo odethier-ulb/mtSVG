@@ -15,7 +15,7 @@ python3 -m pip install "drawsvg~=2.0"
 Example:
 ```
 usage: mtSVG.py [-h] [--gff GFF] [--species SPECIES] [--size SIZE]
-                [--reversed] [--gffs GFFS] [--start START]
+                [--reversed] [--gffs GFFS] [--start START | --linear]
                 [--intergenic INTERGENIC] [--oriented] [--full_name]
                 [--monochromatic] [--font FONT] [--output OUTPUT]
 
