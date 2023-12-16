@@ -4,10 +4,22 @@ Convert a mtDNA GFF returned by MITOS2 to a linear SVG representation
 
 ## Installation
 
-Require `Python3`, the script `mtSVG.py` and the library `drawsvg` which can be installed as follows. 
+Require `Python3`, the script `mtSVG.py` and the library `drawsvg` which can be installed as follows: 
 
 ```
 python3 -m pip install "drawsvg~=2.0"
+```
+
+Or if you prefer to work in a conda environement, for instance `mtSVG`, you can install it with:
+
+```
+conda create -n mtSVG pip
+conda activate mtSVG
+python3 -m pip install "drawsvg~=2.0"
+git clone https://github.com/odethier-ulb/mtSVG.git
+cd mtSVG/
+cp mtSVG.py $CONDA_PREFIX/bin
+chmod a+x $CONDA_PREFIX/bin/mtSVG.py
 ```
 
 ## Usage
