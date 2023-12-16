@@ -1,8 +1,8 @@
 #species;mtDNA size;gff filepath;reversed (true or false - optional)
 
 # NC_004570.1
-Ciona savignyi;14737;c_savignyi.gff;
+Ciona savignyi;14737;example/c_savignyi.gff;
 # NC_002177.1
-Halocynthia roretzi;14771;h_roretzi.gff;false
+Halocynthia roretzi;14771;example/h_roretzi.gff;false
 # NC_013565.1
-Styela plicata;14414;s_plicata.gff;
+Styela plicata;14414;example/s_plicata.gff;
