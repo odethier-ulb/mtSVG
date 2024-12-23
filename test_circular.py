@@ -30,6 +30,9 @@ SPECIES_HEIGHT = 80
 
 RIBBON_HEIGHT = GENE_HEIGHT + ORIENTATION_HEIGHT + INTRA_GENOME_SPACE + INTER_GENOME_SPACE + SPECIES_HEIGHT
 
+def get_color(color_scheme: dict, key: str) -> str:
+    return next((color_scheme[k] for k in color_scheme if key.lower().startswith(k)), '#ffffff')
+
 
 # UPDATED
 def get_drawing(drawables: List[DrawableGenome], circular: False) -> draw.Drawing:
@@ -41,11 +44,12 @@ def get_drawing(drawables: List[DrawableGenome], circular: False) -> draw.Drawin
     height = RIBBON_HEIGHT * len(drawables)
     return draw.Drawing(width, height)
 
-
+# NEW
 def draw_circular_genome(drawable: DrawableGenome, drawing: draw.Drawing):
     # draw inner and outer circles
     c_x, c_y = drawing.width / 2, drawing.height / 2
-    r_in, r_out = c_x - RIBBON_HEIGHT/2 - STROKE_WIDTH, c_x - STROKE_WIDTH
+    r_out = (drawable.genome.get_scaled_length() * SCALE_FACTOR) / (pi * 2)
+    r_in = r_out - RIBBON_HEIGHT / 2
     drawing.append(draw.Circle(c_x, c_y, r_in, fill='none', stroke_width=STROKE_WIDTH, stroke='black'))
     drawing.append(draw.Circle(c_x, c_y, r_out, fill='none', stroke_width=STROKE_WIDTH, stroke='black'))
     # draw species name
@@ -57,6 +61,26 @@ def draw_circular_genome(drawable: DrawableGenome, drawing: draw.Drawing):
     drawing.append(draw.Text(sp_length, species_font_size,
                              c_x - (len(sp_length) * species_font_size / 2) / 2, c_y + (species_font_size * 0.7),
                              font_family=drawable.font, font_style='italic', font_weight='bold'))
+    # draw genes
+    x_pos = 0
+    for gene in drawable.genome.genes:
+        x_pos = draw_circular_gene(drawable, gene, c_x, c_y, x_pos, r_in, r_out, drawing)
+        
+# NEW
+def draw_circular_gene(drawable: DrawableGenome, gene: Gene, c_x: float, c_y: float, 
+                       x_pos: float, r_in: float, r_out: float, drawing: draw.Drawing) -> float:
+    # draw circular arc
+    # TODO : change angle to start from top middle
+    angle_from = (x_pos / r_out) * (180 / pi)
+    angle_to = ((x_pos + gene.scaled_length * SCALE_FACTOR) / r_out) * (180 / pi)
+    drawing.append(draw.ArcLine(c_x, c_y, (r_in + r_out) / 2, angle_from, angle_to,
+        stroke='black', stroke_width=RIBBON_HEIGHT/2 - STROKE_WIDTH, fill='none', fill_opacity=0.0))
+    drawing.append(draw.ArcLine(c_x, c_y, (r_in + r_out) / 2, angle_from + 0.15, angle_to - 0.15,
+        stroke=get_color(drawable.color_scheme, gene.name), stroke_width=RIBBON_HEIGHT/2 - STROKE_WIDTH, fill='none', fill_opacity=0.0))
+
+    # add the gene name
+    # TODO    
+    return x_pos + gene.scaled_length * SCALE_FACTOR
     
 
 # NEW
@@ -66,7 +90,7 @@ def draw_circle(genomes: List[MtGenome], output: str,
                  full_name: bool = False,
                  oriented: bool = False):
     
-    color_scheme = [], COLOR_SCHEMES['monochromatic'] if monochromatic else COLOR_SCHEMES['default']
+    color_scheme = COLOR_SCHEMES['monochromatic'] if monochromatic else COLOR_SCHEMES['default']
     drawable = DrawableGenome(Point(0, 0), color_scheme, font, full_name, oriented, genomes[0])
     drawing = get_drawing([drawable], circular=True)
     draw_circular_genome(drawable, drawing)
