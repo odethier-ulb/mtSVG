@@ -70,14 +70,14 @@ def draw_circular_genome(drawable: DrawableGenome, drawing: draw.Drawing):
 def draw_circular_gene(drawable: DrawableGenome, gene: Gene, c_x: float, c_y: float, 
                        x_pos: float, r_in: float, r_out: float, drawing: draw.Drawing) -> float:
     # draw circular arc
-    # TODO : change angle to start from top middle
     angle_from = (x_pos / r_out) * (180 / pi)
     angle_to = ((x_pos + gene.scaled_length * SCALE_FACTOR) / r_out) * (180 / pi)
-    drawing.append(draw.ArcLine(c_x, c_y, (r_in + r_out) / 2, angle_from, angle_to,
+    angle_from = 90 - angle_from if angle_from <= 90 else 450 - angle_from
+    angle_to = 90 - angle_to if angle_to <= 90 else 450 - angle_to
+    drawing.append(draw.ArcLine(c_x, c_y, (r_in + r_out) / 2, angle_to, angle_from,
         stroke='black', stroke_width=RIBBON_HEIGHT/2 - STROKE_WIDTH, fill='none', fill_opacity=0.0))
-    drawing.append(draw.ArcLine(c_x, c_y, (r_in + r_out) / 2, angle_from + 0.15, angle_to - 0.15,
+    drawing.append(draw.ArcLine(c_x, c_y, (r_in + r_out) / 2, angle_to + 0.15, angle_from - 0.15,
         stroke=get_color(drawable.color_scheme, gene.name), stroke_width=RIBBON_HEIGHT/2 - STROKE_WIDTH, fill='none', fill_opacity=0.0))
-
     # add the gene name
     # TODO    
     return x_pos + gene.scaled_length * SCALE_FACTOR
@@ -87,7 +87,7 @@ def draw_circular_gene(drawable: DrawableGenome, gene: Gene, c_x: float, c_y: fl
 def draw_circle(genomes: List[MtGenome], output: str,
                  monochromatic: bool = False,
                  font: str = 'Arial',
-                 full_name: bool = False,
+                 full_name: bool = False, 
                  oriented: bool = False):
     
     color_scheme = COLOR_SCHEMES['monochromatic'] if monochromatic else COLOR_SCHEMES['default']
