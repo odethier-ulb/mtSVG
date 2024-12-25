@@ -80,7 +80,7 @@ For instance, if we want to draw a circular representation using `nad6` as start
 ./mtSVG.py --gff example/c_savignyi.gff --species "Ciona savignyi" --size 14737 --circular --oriented --monochromatic --intergenic 50 --start nad6
 ```
 
-![](doc/single_gff_custom.svg)
+<img src="doc/single_gff_custom.svg" alt="Custom GFF diagram" width="400">
 
 #### 3. Generate multiple mtDNA ribbons with the default parameters
 
