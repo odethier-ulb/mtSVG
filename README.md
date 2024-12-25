@@ -59,6 +59,7 @@ optional arguments:
   --monochromatic       Do not colorize
   --font FONT           The font to use
   --output OUTPUT       The path of the output to create
+  --circular            Draw a circular representation (for single gff only)
 ```
 
 ## Usages
@@ -71,7 +72,17 @@ optional arguments:
 
 ![](doc/single_gff_default.svg)
 
-#### 2. Generate multiple mtDNA ribbons with the default parameters
+#### 2. Generate a single circular mtDNA with custom parameters
+
+For instance, if we want to draw a circular representation using `nad6` as start gene, display intergenic regions having a size ≥ 50 bp as black blocs, draw gene orientations and do not colorize.
+
+```
+./mtSVG.py --gff example/c_savignyi.gff --species "Ciona savignyi" --size 14737 --circular --oriented --monochromatic --intergenic 50 --start nad6
+```
+
+![](doc/single_gff_custom.svg)
+
+#### 3. Generate multiple mtDNA ribbons with the default parameters
 
 ```
 ./mtSVG.py --gffs example/config.csv
@@ -79,10 +90,10 @@ optional arguments:
 
 ![](doc/multiple_gffs_default.svg)
 
-#### 3. Generate multiple mtDNA ribbons with custom parameters
+#### 4. Generate multiple mtDNA ribbons with custom parameters
 
-For instance if we want to use `cox2` as start gene, `Times New Roman` as the font, 
-display intergenic regions having a size ≥ 100 bp as black blocs, display the gene orientation, use the full gene names,
+For instance, if we want to use `cox2` as start gene, `Times New Roman` as the font, 
+display intergenic regions having a size ≥ 100 bp, display the gene orientation, use the full gene names,
 do not colorize and output the results in a file named `multiple_gffs_custom.svg`.
 
 ```

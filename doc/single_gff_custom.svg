@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="567.9" height="567.9" viewBox="0 0 1893 1893">
+<defs>
+</defs>
+<circle cx="946.5" cy="946.5" r="742.1831756238034" fill="none" stroke-width="5" stroke="black" />
+<circle cx="946.5" cy="946.5" r="907.1831756238034" fill="none" stroke-width="5" stroke="black" />
+<text x="736.5" y="925.5" font-size="60.0" font-family="Arial" font-style="italic" font-weight="bold">Ciona savignyi</text>
+<text x="781.5" y="988.5" font-size="60.0" font-family="Arial" font-style="italic" font-weight="bold">(14,737 bp)</text>
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="136.35887400414936 5045.278338153535" stroke-dashoffset="-3886.227909118263" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="132.04084299401862 5049.596369163665" stroke-dashoffset="-3888.3869246233285" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="972.8951884892066" y="148.61528170375573" font-size="45" font-family="Arial" transform="rotate(6, 972.8951884892066, 148.61528170375573)">nad6</text>
+<circle cx="946.5" cy="946.5" r="723.8498422904701" stroke-dasharray="79.79092445059209 4468.29176923315" stroke-dashoffset="-3411.0620202628065" stroke="#000000" stroke-width="15.0" fill="none" fill-opacity="0.0" />
+<path d="M1027.7795567321307,212.13447581597302 L1065.6417682165738,232.52252609051686 L1024.4793101023083,241.95239613551144" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.45295800138367 5136.1842541563" stroke-dashoffset="-4022.5867831224123" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.134926991251284 5140.502285166433" stroke-dashoffset="-4024.7457986274785" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1107.445403971748" y="192.37761178782932" font-size="45" font-family="Arial" transform="rotate(-77, 1107.445403971748, 192.37761178782932)">trnG</text>
+<path d="M1068.110687070785,217.72710653947615 L1104.792273381643,240.1699423275195 L1063.1728493623627,247.3179456415578" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-4068.039741123796" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-4070.1987566288612" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1148.7439244215084" y="202.38885608597138" font-size="45" font-family="Arial" transform="rotate(-74, 1148.7439244215084, 202.38885608597138)">trnN</text>
+<path d="M1108.0724897497387,225.53299658810806 L1143.4620501149864,249.9624597349831 L1101.5120570135475,254.80688806693104" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="181.81183200553303 4999.825380152151" stroke-dashoffset="-4113.492699125179" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="177.49380099540147 5004.143411162283" stroke-dashoffset="-4115.651714630245" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1209.8721058029946" y="192.87418863805237" font-size="45" font-family="Arial" transform="rotate(23, 1209.8721058029946, 192.87418863805237)">atp6</text>
+<circle cx="946.5" cy="946.5" r="723.8498422904701" stroke-dasharray="119.68638667588849 4428.3963070078535" stroke-dashoffset="-3610.5393313892864" stroke="#000000" stroke-width="15.0" fill="none" fill-opacity="0.0" />
+<path d="M1261.823702059807,278.3158544443377 L1291.0144453884461,309.8930638905748 L1249.0204089949148,305.446569265265" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-4295.304531130712" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-4297.463546635778" stroke="#000000" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1340.2678191566488" y="283.5136471547295" font-size="32" font-family="Arial" transform="rotate(-59, 1340.2678191566488, 283.5136471547295)">intergenic</text>
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="272.71774800829957 4908.919464149385" stroke-dashoffset="-4340.757489132095" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="268.39971699816715 4913.2374951595175" stroke-dashoffset="-4342.916504637162" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1440.3037795796495" y="319.2244967807919" font-size="45" font-family="Arial" transform="rotate(42, 1440.3037795796495, 319.2244967807919)">nad2</text>
+<circle cx="946.5" cy="946.5" r="723.8498422904701" stroke-dasharray="199.47731112647986 4348.605382557263" stroke-dashoffset="-3810.0166425157668" stroke="#000000" stroke-width="15.0" fill="none" fill-opacity="0.0" />
+<path d="M1490.0894953701713,446.09061761807953 L1505.2517460271667,486.3314651179082 L1468.017778049977,466.40906476685177" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-4613.475237140394" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-4615.63425264546" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1563.1413977863622" y="483.51254228808915" font-size="45" font-family="Arial" transform="rotate(-36, 1563.1413977863622, 483.51254228808915)">trnA</text>
+<path d="M1516.8304957909115,476.7956088947587 L1529.7529446558628,517.8106057595975 L1493.6729962634217,495.86732134105773" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="227.26479000691592 4954.372422150768" stroke-dashoffset="-4658.928195141777" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="222.94675899678433 4958.6904531609" stroke-dashoffset="-4661.087210646843" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1628.8991394030222" y="532.1955899244224" font-size="45" font-family="Arial" transform="rotate(63, 1628.8991394030222, 532.1955899244224)">cox2</text>
+<circle cx="946.5" cy="946.5" r="723.8498422904701" stroke-dasharray="159.58184890118417 4388.500844782558" stroke-dashoffset="-4089.284878092838" stroke="#000000" stroke-width="15.0" fill="none" fill-opacity="0.0" />
+<path d="M1623.1189779729084,649.7073988463501 L1624.3935142437404,692.6910609726087 L1595.6457781732565,661.7582615859392" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="318.1707060096824 4863.466506148002" stroke-dashoffset="-4886.192985148694" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="313.85267499955086 4867.784537158133" stroke-dashoffset="-4888.35200065376" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1728.5009343971496" y="785.9033989523982" font-size="45" font-family="Arial" transform="rotate(83, 1728.5009343971496, 785.9033989523982)">cob</text>
+<circle cx="946.5" cy="946.5" r="723.8498422904701" stroke-dasharray="239.37277335177626 4308.709920331966" stroke-dashoffset="-4288.762189219318" stroke="#000000" stroke-width="15.0" fill="none" fill-opacity="0.0" />
+<path d="M1685.0693061957365,926.1414784868659 L1670.0750015903623,966.4452063776117 L1655.080696984988,926.9681087579107" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="318.1707060096824 4863.466506148002" stroke-dashoffset="-22.726479000691427" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="313.85267499955165 4867.7845371581325" stroke-dashoffset="-24.8854945057568" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1733.196961418923" y="1082.2373219136562" font-size="45" font-family="Arial" transform="rotate(104, 1733.196961418923, 1082.2373219136562)">nad1</text>
+<circle cx="946.5" cy="946.5" r="723.8498422904701" stroke-dasharray="239.37277335177626 4308.709920331966" stroke-dashoffset="-19.94773111264784" stroke="#000000" stroke-width="15.0" fill="none" fill-opacity="0.0" />
+<path d="M1638.4411828616962,1205.5685023552826 L1609.3823780730825,1237.2671697838555 L1610.3458456257845,1195.0493756995" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-340.8971850103738" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-343.0562005154392" stroke="#000000" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1639.739007094669" y="1284.1739233415196" font-size="32" font-family="Arial" transform="rotate(25, 1639.739007094669, 1284.1739233415196)">intergenic</text>
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-386.3501430117567" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-388.509158516822" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1618.1935924907975" y="1325.2238007694568" font-size="45" font-family="Arial" transform="rotate(29, 1618.1935924907975, 1325.2238007694568)">trnP</text>
+<path d="M1605.741903486204,1280.1153505768868 L1573.3723519489067,1308.424921145235 L1578.9742763276522,1266.56934982756" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="90.90591600276734 5090.731296154917" stroke-dashoffset="-431.80310101313955" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="86.58788499263659 5095.0493271650475" stroke-dashoffset="-433.9621165182049" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1584.6246547459345" y="1379.3982842052376" font-size="45" font-family="Arial" transform="rotate(34, 1584.6246547459345, 1379.3982842052376)">nad4l</text>
+<circle cx="946.5" cy="946.5" r="723.8498422904701" stroke-dasharray="39.8954622252964 4508.187231458445" stroke-dashoffset="-379.00689114031115" stroke="#000000" stroke-width="15.0" fill="none" fill-opacity="0.0" />
+<path d="M1565.0403204351373,1350.612560369818 L1529.752944655863,1375.1893942404024 L1539.9253260872615,1334.2041156261453" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-522.7090170159069" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-524.8680325209723" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1546.6966785592695" y="1430.6156334068112" font-size="45" font-family="Arial" transform="rotate(38, 1546.6966785592695, 1430.6156334068112)">trnH</text>
+<path d="M1541.8394212407777,1384.072923030377 L1505.251746027167,1406.6685348820918 L1517.6664680709482,1366.3058654504277" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-568.1619750172897" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-570.3209905223551" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1519.1164437684565" y="1462.9440025679678" font-size="45" font-family="Arial" transform="rotate(42, 1519.1164437684565, 1462.9440025679678)">trnR</text>
+<path d="M1516.8304957909115,1416.2043911052413 L1479.0536367100742,1436.7501588075343 L1493.672996263422,1397.1326786589423" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.45295800138367 5136.1842541563" stroke-dashoffset="-613.6149330186726" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.13492699125292 5140.502285166432" stroke-dashoffset="-615.7739485237379" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1489.797191657893" y="1493.7039482671005" font-size="45" font-family="Arial" transform="rotate(45, 1489.797191657893, 1493.7039482671005)">trnQ</text>
+<path d="M1490.0894953701713,1446.9093823819203 L1451.2381795015378,1465.3429091135504 L1468.017778049977,1426.5909352331482" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="227.26479000691668 4954.372422150767" stroke-dashoffset="-659.0678910200562" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="222.94675899678597 4958.690453160898" stroke-dashoffset="-661.2269065251216" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1450.6076175917972" y="1565.5252333725825" font-size="45" font-family="Arial" transform="rotate(145, 1450.6076175917972, 1565.5252333725825)">cox3</text>
+<circle cx="946.5" cy="946.5" r="723.8498422904701" stroke-dasharray="159.58184890118417 4388.500844782558" stroke-dashoffset="-578.4842022667917" stroke="#000000" stroke-width="15.0" fill="none" fill-opacity="0.0" />
+<path d="M1333.4156499117346,1575.9405208643884 L1291.0144453884461,1583.106936109425 L1317.7054624920981,1550.3829385992385" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-886.332681026973" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-888.4916965320383" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1282.6830196885348" y="1640.463238749399" font-size="45" font-family="Arial" transform="rotate(64, 1282.6830196885348, 1640.463238749399)">trnK</text>
+<path d="M1298.1536562840022,1596.2990423775225 L1255.422055527361,1601.1187881451988 L1283.87523449289,1569.914829841328" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-931.7856390283558" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-933.9446545334212" stroke="#000000" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1247.50808478258" y="1656.4282585994024" font-size="32" font-family="Arial" transform="rotate(67, 1247.50808478258, 1656.4282585994024)">intergenic</text>
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-977.2385970297386" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-979.397612534804" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1204.3009551317082" y="1673.234247848301" font-size="45" font-family="Arial" transform="rotate(70, 1204.3009551317082, 1673.234247848301)">rrnl</text>
+<path d="M1224.536120116084,1631.0399954447125 L1181.5336595756096,1631.1296612406118 L1213.246838957649,1603.2451734282683" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="90.90591600276652 5090.731296154918" stroke-dashoffset="-1022.6915550311214" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="86.58788499263576 5095.049327165048" stroke-dashoffset="-1024.8505705361868" stroke="#000000" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1147.1439835171288" y="1691.044150027945" font-size="32" font-family="Arial" transform="rotate(74, 1147.1439835171288, 1691.044150027945)">intergenic</text>
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-1113.597471033888" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-1115.7564865389534" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1081.1683603546098" y="1705.7551825189328" font-size="45" font-family="Arial" transform="rotate(79, 1081.1683603546098, 1705.7551825189328)">rrnl</text>
+<path d="M1108.0724897497387,1667.467003411892 L1065.6417682165738,1660.4774739094833 L1101.5120570135475,1638.1931119330688" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.45295800138367 5136.1842541563" stroke-dashoffset="-1159.0504290352708" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.13492699125292 5140.502285166432" stroke-dashoffset="-1161.2094445403363" stroke="#000000" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="1042.9765088641382" y="1711.5465885812737" font-size="32" font-family="Arial" transform="rotate(82, 1042.9765088641382, 1711.5465885812737)">intergenic</text>
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.45295800138367 5136.1842541563" stroke-dashoffset="-1204.5033870366547" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.13492699125292 5140.502285166432" stroke-dashoffset="-1206.6624025417198" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="996.8267027111123" y="1715.9616445650063" font-size="45" font-family="Arial" transform="rotate(86, 996.8267027111123, 1715.9616445650063)">rrnl</text>
+<path d="M1027.7795567321307,1680.865524184027 L986.3752666457285,1669.2506882002053 L1024.4793101023083,1651.0476038644886" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="90.90591600276571 5090.731296154919" stroke-dashoffset="-1249.956345038038" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="86.58788499263495 5095.049327165049" stroke-dashoffset="-1252.1153605431036" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="986.0837622609489" y="1743.8392348500897" font-size="45" font-family="Arial" transform="rotate(181, 986.0837622609489, 1743.8392348500897)">rrnl</text>
+<circle cx="946.5" cy="946.5" r="723.8498422904701" stroke-dasharray="39.89546222529568 4508.187231458446" stroke-dashoffset="-1097.1252111956398" stroke="#000000" stroke-width="15.0" fill="none" fill-opacity="0.0" />
+<path d="M946.5,1685.34984229047 L906.6247333542716,1669.2506882002053 L946.5,1655.34984229047" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.45295800138367 5136.1842541563" stroke-dashoffset="-1340.8622610408038" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.13492699125292 5140.502285166432" stroke-dashoffset="-1343.0212765458693" stroke="#000000" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="873.3402055434819" y="1714.1272819132582" font-size="32" font-family="Arial" transform="rotate(95, 873.3402055434819, 1714.1272819132582)">intergenic</text>
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.45295800138367 5136.1842541563" stroke-dashoffset="-1386.3152190421877" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.13492699125292 5140.502285166432" stroke-dashoffset="-1388.474234547253" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="827.3419023801416" y="1708.3433876027757" font-size="45" font-family="Arial" transform="rotate(98, 827.3419023801416, 1708.3433876027757)">trnI</text>
+<path d="M865.2204432678694,1680.865524184027 L827.3582317834263,1660.4774739094833 L868.5206898976918,1651.0476038644886" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="136.35887400414896 5045.2783381535355" stroke-dashoffset="-1431.768177043571" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="132.0408429940178 5049.596369163666" stroke-dashoffset="-1433.9271925486366" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="789.1372991789966" y="1729.1581054690337" font-size="45" font-family="Arial" transform="rotate(196, 789.1372991789966, 1729.1581054690337)">nad3</text>
+<circle cx="946.5" cy="946.5" r="723.8498422904701" stroke-dasharray="79.790924450591 4468.291769233151" stroke-dashoffset="-1256.707060096824" stroke="#000000" stroke-width="15.0" fill="none" fill-opacity="0.0" />
+<path d="M745.4563979123338,1657.4715602696556 L711.4663404243905,1631.1296612406118 L753.6195018576939,1628.603520260378" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.45295800138367 5136.1842541563" stroke-dashoffset="-1568.1270510477202" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-1570.286066552786" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="663.6252160524384" y="1663.8463989378333" font-size="45" font-family="Arial" transform="rotate(111, 663.6252160524384, 1663.8463989378333)">trnE</text>
+<path d="M706.5958483863203,1645.3169198661212 L674.1085204631335,1617.1425844364903 L716.3368324624607,1616.9424026151023" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-1613.5800090491039" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.134926991251284 5140.502285166433" stroke-dashoffset="-1615.7390245541696" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="624.5377502464617" y="1647.174181910606" font-size="45" font-family="Arial" transform="rotate(114, 624.5377502464617, 1647.174181910606)">trnV</text>
+<path d="M668.463879883916,1631.0399954447125 L637.5779444726393,1601.1187881451988 L679.753161042351,1603.2451734282683" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="363.62366401106567 4818.013548146619" stroke-dashoffset="-1659.0329670504866" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="359.3056330009341 4822.33157915675" stroke-dashoffset="-1661.1919825555526" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="488.0012559432532" y="1600.0255399480907" font-size="45" font-family="Arial" transform="rotate(219, 488.0012559432532, 1600.0255399480907)">nad4</text>
+<circle cx="946.5" cy="946.5" r="723.8498422904701" stroke-dasharray="279.26823557707195 4268.81445810667" stroke-dashoffset="-1456.1843712233035" stroke="#000000" stroke-width="15.0" fill="none" fill-opacity="0.0" />
+<path d="M402.9105046298289,1446.9093823819205 L387.74825397283325,1406.6685348820918 L424.9822219500228,1426.5909352331482" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-2022.6566310615522" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.134926991251284 5140.502285166433" stroke-dashoffset="-2024.8156465666182" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="329.8586022136377" y="1409.4874577119108" font-size="45" font-family="Arial" transform="rotate(143, 329.8586022136377, 1409.4874577119108)">trnF</text>
+<path d="M376.1695042090885,1416.2043911052413 L363.24705534413715,1375.1893942404026 L399.32700373657815,1397.1326786589423" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="90.90591600276612 5090.731296154918" stroke-dashoffset="-2068.109589062935" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="86.58788499263454 5095.049327165049" stroke-dashoffset="-2070.268604568001" stroke="#000000" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="295.7985399114458" y="1360.2530776937867" font-size="32" font-family="Arial" transform="rotate(147, 295.7985399114458, 1360.2530776937867)">intergenic</text>
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.45295800138367 5136.1842541563" stroke-dashoffset="-2159.0155050657013" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-2161.174520570767" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="262.0635562401568" y="1301.677074029048" font-size="45" font-family="Arial" transform="rotate(152, 262.0635562401568, 1301.677074029048)">trnG</text>
+<path d="M306.6372669943271,1315.9249211452352 L300.64191009307194,1273.3423502022235 L332.61802910786014,1300.9249211452352" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-2204.468463067085" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.134926991251284 5140.502285166433" stroke-dashoffset="-2206.6274785721507" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="243.5369521944358" y="1263.4336726862089" font-size="45" font-family="Arial" transform="rotate(155, 243.5369521944358, 1263.4336726862089)">trnY</text>
+<path d="M287.2580965137961,1280.1153505768868 L283.61762192691765,1237.2671697838555 L314.0257236723479,1266.5693498275602" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.45295800138367 5136.1842541563" stroke-dashoffset="-2249.9214210684677" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-2252.080436573534" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="227.1452238208724" y="1224.2277541959647" font-size="45" font-family="Arial" transform="rotate(158, 227.1452238208724, 1224.2277541959647)">trnL</text>
+<path d="M269.88102202709183,1243.2926011536501 L268.60648575625953,1200.3089390273913 L297.35422182674347,1231.241738414061" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-2295.3743790698513" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.134926991251284 5140.502285166433" stroke-dashoffset="-2297.5333945749176" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="212.93815225979574" y="1184.1783856442028" font-size="45" font-family="Arial" transform="rotate(162, 212.93815225979574, 1184.1783856442028)">trnS</text>
+<path d="M254.55881713830377,1205.5685023552826 L255.6540899082829,1162.5798988649462 L282.6541543742154,1195.0493756995" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="454.52958001383183 4727.107632143852" stroke-dashoffset="-2340.827337071234" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="450.2115490037002 4731.425663153984" stroke-dashoffset="-2342.9863525763003" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="150.5542137936717" y="1008.03889084512" font-size="45" font-family="Arial" transform="rotate(270, 150.5542137936717, 1008.03889084512)">cox1</text>
+<circle cx="946.5" cy="946.5" r="723.8498422904701" stroke-dasharray="359.059160027664 4189.023533656078" stroke-dashoffset="-2054.616304602743" stroke="#000000" stroke-width="15.0" fill="none" fill-opacity="0.0" />
+<path d="M221.35471899470474,804.8546298377394 L244.7997703834759,768.8053688485336 L250.79826379227734,810.6059487954516" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.45295800138367 5136.1842541563" stroke-dashoffset="-2795.356917085066" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-2797.515932590132" stroke="#000000" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="207.1365683316077" y="727.5348991871178" font-size="32" font-family="Arial" transform="rotate(196, 207.1365683316077, 727.5348991871178)">intergenic</text>
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="454.5295800138322 4727.107632143852" stroke-dashoffset="-2840.8098750864497" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="450.2115490037006 4731.425663153984" stroke-dashoffset="-2842.968890591516" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="257.3440549198292" y="543.5349729483783" font-size="45" font-family="Arial" transform="rotate(305, 257.3440549198292, 543.5349729483783)">nad5</text>
+<circle cx="946.5" cy="946.5" r="723.8498422904701" stroke-dasharray="359.05916002766367 4189.023533656078" stroke-dashoffset="-2493.4663890809993" stroke="#000000" stroke-width="15.0" fill="none" fill-opacity="0.0" />
+<path d="M431.3023684820521,416.9053531889232 L471.1101509691005,400.6400494427925 L452.221272514872,438.40882858397663" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-3295.3394551002816" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.134926991251284 5140.502285166433" stroke-dashoffset="-3297.498470605348" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="466.6971871803307" y="342.8500515424603" font-size="45" font-family="Arial" transform="rotate(231, 466.6971871803307, 342.8500515424603)">trnD</text>
+<path d="M461.25887060838454,389.32845029613907 L501.90222478678197,375.2807667283994 L480.96143132981655,411.951648589446" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.45295800138367 5136.1842541563" stroke-dashoffset="-3340.792413101665" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-3342.95142860673" stroke="#000000" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="497.52951345878637" y="319.57934977590435" font-size="32" font-family="Arial" transform="rotate(234, 497.52951345878637, 319.57934977590435)">intergenic</text>
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-3386.245371103048" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.134926991251284 5140.502285166433" stroke-dashoffset="-3388.404386608114" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="536.0157222080704" y="293.7315440004053" font-size="45" font-family="Arial" transform="rotate(237, 536.0157222080704, 293.7315440004053)">trnL</text>
+<path d="M525.4974065727009,339.32959082302045 L567.4394437980835,329.83827026818653 L542.591648298009,363.98292527977776" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.45295800138326 5136.184254156301" stroke-dashoffset="-3431.698329104431" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-3433.8573446094965" stroke="#000000" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="569.2208856519264" y="273.9938889949102" font-size="32" font-family="Arial" transform="rotate(240, 569.2208856519264, 273.9938889949102)">intergenic</text>
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="181.8118320055326 4999.825380152151" stroke-dashoffset="-3477.1512871058144" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="177.49380099540147 5004.143411162283" stroke-dashoffset="-3479.31030261088" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="609.7796524113849" y="222.66567006955245" font-size="45" font-family="Arial" transform="rotate(339, 609.7796524113849, 222.66567006955245)">rrns</text>
+<circle cx="946.5" cy="946.5" r="723.8498422904701" stroke-dasharray="119.68638667588777 4428.396307007854" stroke-dashoffset="-3052.002860235143" stroke="#000000" stroke-width="15.0" fill="none" fill-opacity="0.0" />
+<path d="M706.5958483863201,247.68308013387878 L749.537949885014,249.9624597349831 L716.3368324624606,276.0575973848978" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-3658.9631191113476" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.134926991251284 5140.502285166433" stroke-dashoffset="-3661.122134616414" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="770.2104637939892" y="195.81631236137378" font-size="45" font-family="Arial" transform="rotate(256, 770.2104637939892, 195.81631236137378)">trnM</text>
+<path d="M745.456397912334,235.52843973034442 L788.2077266183568,240.1699423275195 L753.619501857694,264.3964797396219" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.45295800138367 5136.1842541563" stroke-dashoffset="-3704.4160771127304" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-3706.5750926177966" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="811.83163964539" y="187.24481748106723" font-size="45" font-family="Arial" transform="rotate(259, 811.83163964539, 187.24481748106723)">trnT</text>
+<path d="M784.9275102502612,225.53299658810806 L827.3582317834264,232.52252609051686 L791.4879429864525,254.80688806693104" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-3749.869035114114" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.134926991251284 5140.502285166433" stroke-dashoffset="-3752.0280506191802" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="853.8617988810929" y="180.9791556359096" font-size="45" font-family="Arial" transform="rotate(263, 853.8617988810929, 180.9791556359096)">trnW</text>
+<path d="M824.8893129292154,217.72710653947604 L866.8705665827804,227.0434359757421 L829.8271506376375,247.31794564155769" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.45295800138367 5136.1842541563" stroke-dashoffset="-3795.3219931154968" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-3797.481008620563" stroke="#ffffff" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="896.1732972888876" y="177.0383554349936" font-size="45" font-family="Arial" transform="rotate(266, 896.1732972888876, 177.0383554349936)">trnS</text>
+<path d="M865.2204432678692,212.13447581597302 L906.6247333542717,223.74931179979455 L868.5206898976916,241.95239613551144" fill="#000000" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="45.452958001382854 5136.184254156301" stroke-dashoffset="-3840.7749511168804" stroke="black" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<circle cx="946.5" cy="946.5" r="824.6831756238034" stroke-dasharray="41.1349269912521 5140.502285166432" stroke-dashoffset="-3842.9339666219457" stroke="#000000" stroke-width="160.0" fill="none" fill-opacity="0.0" />
+<text x="934.7704523868107" y="175.48351692376457" font-size="32" font-family="Arial" transform="rotate(269, 934.7704523868107, 175.48351692376457)">intergenic</text>
+</svg>
