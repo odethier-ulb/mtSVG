@@ -1,6 +1,6 @@
 # mtSVG
 
-Convert a mtDNA GFF returned by MITOS2 to a linear SVG representation
+Convert a mtDNA GFF returned by MITOS2 to a simplified SVG representation
 
 ## Installation
 
