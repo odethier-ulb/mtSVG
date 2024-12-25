@@ -39,7 +39,7 @@ optional arguments:
   --species SPECIES     The species name (ignored if --gffs is used)
   --size SIZE           The size of the mtDNA in base pair (ignored if --gffs
                         is used)
-  --reversed            Reverse the gene order (ignored if --gffs is used
+  --reversed            Reverse the gene order (ignored if --gffs is used)
   --gffs GFFS           The path of the semicolon separated config file to
                         draw multiple ribbons. Each entry in the config file
                         must have the following format: "species;mtdna
@@ -48,7 +48,7 @@ optional arguments:
                         roretzi;14771;example/h_roretzi.gff;false". Comments
                         can be inserted using "#" to start a line and the last
                         "true/false" value for the gene order can be omitted
-                        when using false.
+                        when using false
   --start START         Start gene of the ribbon
   --linear              Show the genes in the same order as in the gff file.
   --intergenic INTERGENIC
@@ -59,7 +59,7 @@ optional arguments:
   --monochromatic       Do not colorize
   --font FONT           The font to use
   --output OUTPUT       The path of the output to create
-  --circular            Draw a circular representation (for single gff only)
+  --circular            Draw a circular representation (for --gff only)
 ```
 
 ## Usages
