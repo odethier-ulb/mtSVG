@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import math
 import argparse
 import sys
 import drawsvg as draw
+from math import ceil, pi, cos, sin
 from typing import List, Tuple
 from dataclasses import dataclass
 
@@ -93,7 +93,7 @@ def get_genomes(species: List[Tuple[str, int, str, bool]], start: str, intergeni
     unit = max_length / 10.
     for genome in genomes:
         for gene in genome.genes:
-            gene.scaled_length = max(1, int(math.ceil(gene.get_length(genome.length) / unit)))
+            gene.scaled_length = max(1, int(ceil(gene.get_length(genome.length) / unit)))
 
     return genomes
 
@@ -119,6 +119,7 @@ INTRA_GENOME_SPACE = 10
 GENE_HEIGHT = 160
 ORIENTATION_HEIGHT = 30
 SPECIES_HEIGHT = 80
+RADIUS_RATIO = 0.88
 
 RIBBON_HEIGHT = GENE_HEIGHT + ORIENTATION_HEIGHT + INTRA_GENOME_SPACE + INTER_GENOME_SPACE + SPECIES_HEIGHT
 
@@ -143,9 +144,12 @@ def get_color(color_scheme: dict, key: str) -> str:
     return next((color_scheme[k] for k in color_scheme if key.lower().startswith(k)), '#ffffff')
 
 
-def get_drawing(drawables: List[DrawableGenome]) -> draw.Drawing:
+def get_drawing(drawables: List[DrawableGenome], circular=False) -> draw.Drawing:
     width = max([(drawable.genome.get_scaled_length() * SCALE_FACTOR) + len(drawable.genome.genes) * STROKE_WIDTH
                  for drawable in drawables])
+    if circular:
+        width = int(width / pi)
+        return draw.Drawing(width, width)
     height = RIBBON_HEIGHT * len(drawables)
     return draw.Drawing(width, height)
 
@@ -159,6 +163,8 @@ def get_clean_name(gene_name: str) -> str:
     except:
         return gene_name
 
+
+#----------------------------- RIBBON -----------------------------#
 
 def draw_genome(drawable: DrawableGenome, drawing: draw.Drawing):
     # draw species
@@ -240,7 +246,118 @@ def draw_ribbons(genomes: List[MtGenome], output: str,
     drawing.save_svg(output)
 
 
-# ----------------------------- MAIN -----------------------------
+# ----------------------------- CIRCLE -----------------------------#
+
+def x_to_deg(x: float, radius: float) -> float:
+    angle = x / radius
+    angle = pi/2 - angle if angle <= pi/2 else 5*pi/2 - angle
+    return angle * (180 / pi)
+
+
+def x_to_polar(x: float, radius: float) -> Tuple[float, float]:
+    angle = (x / radius) - pi/2
+    return angle, radius * cos(angle), radius * sin(angle)
+
+
+def draw_circular_genome(drawable: DrawableGenome, drawing: draw.Drawing):
+    # draw inner and outer circles
+    c_x, c_y = drawing.width / 2, drawing.height / 2
+    r_out = (drawable.genome.get_scaled_length() * SCALE_FACTOR) / (pi * 2)
+    r_in = r_out - RIBBON_HEIGHT / 2
+    drawing.append(draw.Circle(c_x, c_y, r_in, fill='none', stroke_width=STROKE_WIDTH, stroke='black'))
+    drawing.append(draw.Circle(c_x, c_y, r_out, fill='none', stroke_width=STROKE_WIDTH, stroke='black'))
+    # draw species name
+    species_font_size = SPECIES_HEIGHT * 0.75
+    sp_name, sp_length = drawable.genome.species, f'({drawable.genome.length:,} bp)'
+    drawing.append(draw.Text(sp_name, species_font_size,
+                             c_x - (len(sp_name) * species_font_size / 2) / 2, c_y - (species_font_size * 0.7) / 2,
+                             font_family=drawable.font, font_style='italic', font_weight='bold'))
+    drawing.append(draw.Text(sp_length, species_font_size,
+                             c_x - (len(sp_length) * species_font_size / 2) / 2, c_y + (species_font_size * 0.7),
+                             font_family=drawable.font, font_style='italic', font_weight='bold'))
+    # draw genes
+    x_pos = 0
+    for gene in drawable.genome.genes:
+        x_pos = draw_circular_gene(drawable, gene, c_x, c_y, x_pos, r_in, r_out, drawing)
+
+        
+def draw_circular_gene(drawable: DrawableGenome, gene: Gene, c_x: float, c_y: float, 
+                       x_pos: float, r_in: float, r_out: float, drawing: draw.Drawing) -> float:
+    # draw gene arcs
+    angle_from = x_to_deg(x_pos, r_out)
+    angle_to = x_to_deg(x_pos + gene.scaled_length * SCALE_FACTOR, r_out)
+    drawing.append(draw.ArcLine(c_x, c_y, (r_in + r_out) / 2, angle_to, angle_from,
+        stroke='black', stroke_width=RIBBON_HEIGHT/2 - STROKE_WIDTH, fill='none', fill_opacity=0.0))
+    drawing.append(draw.ArcLine(c_x, c_y, (r_in + r_out) / 2, angle_to + 0.15, angle_from - 0.15,
+        stroke=get_color(drawable.color_scheme, gene.name), stroke_width=RIBBON_HEIGHT/2 - STROKE_WIDTH, fill='none', fill_opacity=0.0))
+
+    # draw gene name
+    gene_name = gene.name if drawable.full_name else get_clean_name(gene.name)
+    font_size = int(GENE_HEIGHT / 3.5)
+    gene_size = len(gene_name) * font_size / 2
+
+    if gene_size < gene.scaled_length * SCALE_FACTOR:
+        angle, origin_x, origin_y = x_to_polar(x_pos + ((gene.scaled_length * SCALE_FACTOR) - gene_size) / 2, r_out)
+        text_rotation = int((angle + pi/1.9) * (180/pi))
+        text_x, text_y = RADIUS_RATIO * origin_x + c_x, RADIUS_RATIO * origin_y + c_y
+        drawing.append(draw.Text(gene_name, font_size,text_x, text_y, font_family=drawable.font, 
+                                 transform=f'rotate({text_rotation}, {text_x}, {text_y})'))   
+    else:
+        if gene_size > GENE_HEIGHT:
+            font_size = int(2 * GENE_HEIGHT / len(gene_name))
+            gene_size = len(gene_name) * font_size / 2
+
+        angle, origin_x, origin_y = x_to_polar(x_pos + ((gene.scaled_length * SCALE_FACTOR) + font_size * 0.7) / 2, r_out)
+        text_x, text_y = (RADIUS_RATIO - .03) * origin_x + c_x, (RADIUS_RATIO - .03) * origin_y + c_y
+        text_rotation = int(angle * (180/pi))
+        drawing.append(draw.Text(gene_name, font_size,text_x, text_y, font_family=drawable.font, 
+                                 transform=f'rotate({text_rotation}, {text_x}, {text_y})'))
+
+    # draw orientation
+    if drawable.oriented and gene.name != 'intergenic':
+        orientation_color = get_color(drawable.color_scheme, gene.orientation)
+        origin_x = x_pos if gene.orientation == '+' else x_pos + SCALE_FACTOR
+        angle_from = x_to_deg(origin_x, r_out)
+        angle_to = x_to_deg(x_pos + (gene.scaled_length - 1) * SCALE_FACTOR, r_out)
+        r_orientation = r_out - RIBBON_HEIGHT/1.8
+
+        if gene.scaled_length > 1:
+            drawing.append(draw.ArcLine(c_x, c_y, r_orientation, angle_to, angle_from, 
+                                        stroke=orientation_color, stroke_width=ORIENTATION_HEIGHT / 2, 
+                                        fill='none', fill_opacity=0.0))
+            origin_x += (gene.scaled_length - 1) * SCALE_FACTOR if gene.orientation == '+' else 0
+
+        # draw arrow
+        arrow_x = origin_x + SCALE_FACTOR if gene.orientation == '+' else origin_x - SCALE_FACTOR
+        _, x_1, y_1 = x_to_polar(origin_x, r_out)
+        _, x_2, y_2 = x_to_polar(arrow_x, r_out)
+        _, x_3, y_3 = x_to_polar(origin_x, r_out)
+        ratio_1 = (r_orientation + ORIENTATION_HEIGHT / 2) / r_out
+        ratio_2 = r_orientation / r_out
+        ratio_3 = (r_orientation - ORIENTATION_HEIGHT / 2) / r_out
+        drawing.append(draw.Lines(x_1 * ratio_1 + c_x, y_1 * ratio_1 + c_y, 
+                                  x_2 * ratio_2 + c_x, y_2 * ratio_2  + c_y, 
+                                  x_3 * ratio_3 + c_x, y_3 * ratio_3 + c_y, 
+                                  close=False, fill=orientation_color))
+ 
+    return x_pos + gene.scaled_length * SCALE_FACTOR
+    
+
+def draw_circle(genomes: List[MtGenome], output: str,
+                 monochromatic: bool = False,
+                 font: str = 'Arial',
+                 full_name: bool = False, 
+                 oriented: bool = False):
+    
+    color_scheme = COLOR_SCHEMES['monochromatic'] if monochromatic else COLOR_SCHEMES['default']
+    drawable = DrawableGenome(Point(0, 0), color_scheme, font, full_name, oriented, genomes[0])
+    drawing = get_drawing([drawable], circular=True)
+    draw_circular_genome(drawable, drawing)
+    drawing.set_pixel_scale(PIXEL_SCALE)
+    drawing.save_svg(output)
+
+
+# ----------------------------- MAIN -----------------------------#
 
 def parse_gffs(filepath: str) -> List[Tuple[str, int, str, bool]]:
     try:
@@ -279,6 +396,7 @@ if __name__ == '__main__':
     parser.add_argument('--oriented', action='store_true', help='Display gene orientations')
     parser.add_argument('--full_name', action='store_true', help='Display gene full names')
     parser.add_argument('--monochromatic', action='store_true', help='Do not colorize')
+    parser.add_argument('--circular', action='store_true', help='Draw a circular representation (for single gff only)')
     parser.add_argument('--font', type=str, help='The font to use', default='Arial')
     parser.add_argument('--output', type=str, help='The path of the output to create', default='mtDNA.svg')
     args = parser.parse_args(args=None if sys.argv[1:] else ['--help'])
@@ -293,9 +411,14 @@ if __name__ == '__main__':
         gffs = parse_gffs(args.gffs)
         if gffs is None:
             sys.exit('Error : wrong gffs file format')
+        elif args.circular:
+            sys.exit('Error : circular representation not supported with multiple genomes')
     else:
         sys.exit('Error : missing gff(s) file')
 
     genomes = get_genomes(gffs, args.start, args.intergenic, args.linear)
-    draw_ribbons(genomes, args.output, args.monochromatic, args.font, args.full_name, args.oriented)
+    if args.circular:
+        draw_circle(genomes, args.output, args.monochromatic, args.font, args.full_name, args.oriented)
+    else:
+        draw_ribbons(genomes, args.output, args.monochromatic, args.font, args.full_name, args.oriented)
     print('Done !')
