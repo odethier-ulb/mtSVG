@@ -13,13 +13,13 @@ python3 -m pip install "drawsvg~=2.0"
 Or if you prefer to work in a conda environement, for instance `mtSVG`, you can install it with:
 
 ```
-conda create -n mtSVG pip
+conda create -n mtSVG pip -y
 conda activate mtSVG
 python3 -m pip install "drawsvg~=2.0"
 git clone https://github.com/odethier-ulb/mtSVG.git
-cd mtSVG/
-cp mtSVG.py $CONDA_PREFIX/bin
+cp mtSVG/mtSVG.py $CONDA_PREFIX/bin
 chmod a+x $CONDA_PREFIX/bin/mtSVG.py
+rm -rf mtSVG
 ```
 
 ## Usage
