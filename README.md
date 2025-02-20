@@ -1,6 +1,6 @@
 # mtSVG
 
-Convert a mtDNA GFF returned by MITOS2 to a simplified SVG representation
+Convert a mtDNA GFF returned by MITOS2 or converted from GenBank to a simplified SVG representation
 
 ## Installation
 
@@ -31,7 +31,7 @@ usage: mtSVG.py [-h] [--gff GFF] [--species SPECIES] [--size SIZE]
                 [--intergenic INTERGENIC] [--oriented] [--full_name]
                 [--monochromatic] [--font FONT] [--output OUTPUT]
 
-Convert a MITOS2 mtDNA GFF to a linear SVG representation
+Convert a mtDNA GFF to a linear SVG representation
 
 optional arguments:
   -h, --help            show this help message and exit

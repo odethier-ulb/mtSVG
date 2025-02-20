@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import re
 import argparse
 import sys
 import drawsvg as draw
@@ -10,8 +11,8 @@ from dataclasses import dataclass
 
 # ----------------------------- GFF PARSING -----------------------------
 
-GENE_CLASSES = set(['gene', 'trna', 'rrna'])
-
+GENE_CLASSES_MITOS = set(['gene', 'trna', 'rrna'])
+GENE_CLASSES_GENEBANK = set(['gene'])
 
 @dataclass
 class Gene:
@@ -38,14 +39,80 @@ class MtGenome:
         return sum([g.scaled_length for g in self.genes])
 
 
+def product_to_gene_name(product: str) -> str:
+    p = product.lower()
+    if '16s' in p:
+        return 'rrnL'
+    elif '12s' in p:
+        return 'rrnS'
+    elif 'trna-ala' in p:
+        return 'trnA'
+    elif 'trna-arg' in p:
+        return 'trnR'
+    elif 'trna-asn' in p:
+        return 'trnN'
+    elif 'trna-asp' in p:
+        return 'trnD'
+    elif 'trna-asx' in p:
+        return 'trnB'
+    elif 'trna-cys' in p:
+        return 'trnC'
+    elif 'trna-gln' in p:
+        return 'trnQ'
+    elif 'trna-glu' in p:
+        return 'trnE'
+    elif 'trna-glx' in p:
+        return 'trnZ'
+    elif 'trna-gly' in p:
+        return 'trnG'
+    elif 'trna-his' in p:
+        return 'trnH'
+    elif 'trna-ile' in p:
+        return 'trnI'
+    elif 'trna-leu' in p:
+        return 'trnL'
+    elif 'trna-lys' in p:
+        return 'trnK'
+    elif 'trna-met' in p:
+        return 'trnM'
+    elif 'trna-phe' in p:
+        return 'trnF'
+    elif 'trna-pro' in p:
+        return 'trnP'
+    elif 'trna-ser' in p:
+        return 'trnS'
+    elif 'trna-thr' in p:
+        return 'trnT'
+    elif 'trna-trp' in p:
+        return 'trnW'
+    elif 'trna-tyr' in p:
+        return 'trnY'
+    elif 'trna-val' in p:
+        return 'trnV'
+    else: 
+        return None
+
+
 def parse_gff(filepath: str) -> List[Gene]:
     genes = []
     with open(filepath, 'rt') as f:
-        for line in f:
-            lsplt = line.strip().split()
-            if len(lsplt) < 9 or lsplt[2].lower() not in GENE_CLASSES:
-                continue
+        lines = f.readlines()
+    lines = [line for line in lines if not line.startswith('#') and len(line.split()) >= 9]
+    for idx, line in enumerate(lines):
+        lsplt = line.strip().split()
+        is_mitos = re.search(r'^Name=.+$', lsplt[8]) is not None
+        if is_mitos and lsplt[2].lower() in GENE_CLASSES_MITOS:
             genes.append(Gene(lsplt[8].split('=')[-1].lower(), lsplt[6], int(lsplt[3]), int(lsplt[4])))
+        elif not is_mitos and lsplt[2].lower() in GENE_CLASSES_GENEBANK:
+            gene_name = next((x.strip() for x in lsplt[8].split(";") if x.strip().startswith("gene=")), None)
+            if not gene_name is None:
+                gene_name = gene_name.split('=')[-1].lower()
+            else:
+                gene_name = next((x.strip() for x in lines[idx+1].strip().split()[8].split(";") if x.strip().startswith("product=")), None)
+                gene_name = product_to_gene_name(gene_name.split('=')[-1])
+            genes.append(Gene(gene_name, lsplt[6], int(lsplt[3]), int(lsplt[4])))
+        else:
+            continue
     return genes
 
 
@@ -100,7 +167,9 @@ def get_genomes(species: List[Tuple[str, int, str, bool]], start: str, intergeni
 
 # ----------------------------- DRAWING -----------------------------
 
-COLOR_SCHEMES = {'default': {'co': '#f2ed8d', 'na': '#b6e07b', 'atp': '#b3e6e8',
+COLOR_SCHEMES = {'default': {'co': '#f2ed8d', 'cy': '#f2ed8d',
+                             'na': '#b6e07b', 'nd': '#b6e07b', 
+                             'atp': '#b3e6e8',
                              'rrn': '#c7ace3',
                              'trn': '#e69d97',
                              'intergenic': '#000000',
