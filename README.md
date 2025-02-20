@@ -1,6 +1,6 @@
 # mtSVG
 
-Convert a mtDNA GFF returned by MITOS2 or converted from GenBank to a simplified SVG representation
+Convert a mtDNA GFF returned by MITOS2 or converted from GenBank to a simplified SVG representation.
 
 ## Installation
 
