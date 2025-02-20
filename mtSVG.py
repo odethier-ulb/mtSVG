@@ -446,7 +446,7 @@ def parse_gffs(filepath: str) -> List[Tuple[str, int, str, bool]]:
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Convert a MITOS2 mtDNA GFF to a linear SVG representation')
+    parser = argparse.ArgumentParser(description='Convert a mtDNA GFF to a linear SVG representation')
     parser.add_argument('--gff', type=str, help='The path of a single gff file')
     parser.add_argument('--species', type=str, help='The species name (ignored if --gffs is used)')
     parser.add_argument('--size', type=int, help='The size of the mtDNA in base pair (ignored if --gffs is used)')
