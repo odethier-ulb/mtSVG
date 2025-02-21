@@ -100,9 +100,10 @@ def parse_gff(filepath: str) -> List[Gene]:
     lines = [line for line in lines if not line.startswith('#') and len(line.split()) >= 9]
     for idx, line in enumerate(lines):
         lsplt = line.strip().split()
-        is_mitos = re.search(r'^Name=.+$', lsplt[8]) is not None
+        is_mitos = lsplt[1].lower().startswith('mit')
         if is_mitos and lsplt[2].lower() in GENE_CLASSES_MITOS:
-            genes.append(Gene(lsplt[8].split('=')[-1].lower(), lsplt[6], int(lsplt[3]), int(lsplt[4])))
+            gene_name = next((x.strip() for x in lsplt[8].split(";") if x.strip().startswith("Name=")), None)
+            genes.append(Gene(gene_name.split('=')[-1].lower(), lsplt[6], int(lsplt[3]), int(lsplt[4])))
         elif not is_mitos and lsplt[2].lower() in GENE_CLASSES_GENEBANK:
             gene_name = next((x.strip() for x in lsplt[8].split(";") if x.strip().startswith("gene=")), None)
             if not gene_name is None:
