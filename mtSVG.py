@@ -42,9 +42,9 @@ class MtGenome:
 def product_to_gene_name(product: str) -> str:
     p = product.lower()
     if '16s' in p:
-        return 'rrnL'
+        return 'rrnl'
     elif '12s' in p:
-        return 'rrnS'
+        return 'rrns'
     elif 'trna-ala' in p:
         return 'trnA'
     elif 'trna-arg' in p:
@@ -114,6 +114,7 @@ def parse_gff(filepath: str) -> List[Gene]:
             genes.append(Gene(gene_name, lsplt[6], int(lsplt[3]), int(lsplt[4])))
         else:
             continue
+    genes.sort(key=lambda x: x.start)
     return genes
 
 
@@ -133,7 +134,9 @@ def get_genomes(species: List[Tuple[str, int, str, bool]], start: str, intergeni
                 if region_length >= intergenic:
                     genome.genes.insert(i, Gene('intergenic', None, genome.genes[i - 1].end, genome.genes[i].start))
                     i -= 1
-
+            # fill the gap between last gene and total length
+            if genome.genes[-1].end < genome.length:
+                genome.genes.append(Gene('intergenic', None, genome.genes[-1].end, genome.length))
     # reverse
     for i in range(len(species)):
         if species[i][3]:
