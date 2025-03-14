@@ -4,10 +4,18 @@
 import re
 import argparse
 import sys
+import logging
 import drawsvg as draw
 from math import ceil, pi, cos, sin
 from typing import List, Tuple
 from dataclasses import dataclass
+
+
+logging.basicConfig(
+    level=logging.WARNING,  # Set minimum log level to WARNING
+    format="%(asctime)s - %(levelname)s - %(message)s",  # Log format
+)
+
 
 # ----------------------------- GFF PARSING -----------------------------
 
@@ -41,9 +49,9 @@ class MtGenome:
 
 def product_to_gene_name(product: str) -> str:
     p = product.lower()
-    if '16s' in p:
+    if '16s' in p or 'large' in p:
         return 'rrnl'
-    elif '12s' in p:
+    elif '12s' in p or 'small' in p:
         return 'rrns'
     elif 'trna-ala' in p:
         return 'trnA'
@@ -90,7 +98,7 @@ def product_to_gene_name(product: str) -> str:
     elif 'trna-val' in p:
         return 'trnV'
     else: 
-        return None
+        raise Exception(f'Unknown product name: {p}')
 
 
 def parse_gff(filepath: str) -> List[Gene]:
@@ -99,7 +107,7 @@ def parse_gff(filepath: str) -> List[Gene]:
         lines = f.readlines()
     lines = [line for line in lines if not line.startswith('#') and len(line.split()) >= 9]
     for idx, line in enumerate(lines):
-        lsplt = line.strip().split()
+        lsplt = line.strip().split('\t')
         is_mitos = lsplt[1].lower().startswith('mit')
         if is_mitos and lsplt[2].lower() in GENE_CLASSES_MITOS:
             gene_name = next((x.strip() for x in lsplt[8].split(";") if x.strip().startswith("Name=")), None)
@@ -108,8 +116,8 @@ def parse_gff(filepath: str) -> List[Gene]:
             gene_name = next((x.strip() for x in lsplt[8].split(";") if x.strip().startswith("gene=")), None)
             if not gene_name is None:
                 gene_name = gene_name.split('=')[-1].lower()
-            else:
-                gene_name = next((x.strip() for x in lines[idx+1].strip().split()[8].split(";") if x.strip().startswith("product=")), None)
+            else: 
+                gene_name = next((x.strip() for x in lines[idx+1].strip().split()[8].split(";") if x.strip().startswith("product=")), None) 
                 gene_name = product_to_gene_name(gene_name.split('=')[-1])
             genes.append(Gene(gene_name, lsplt[6], int(lsplt[3]), int(lsplt[4])))
         else:
@@ -119,7 +127,18 @@ def parse_gff(filepath: str) -> List[Gene]:
 
 
 def get_genomes(species: List[Tuple[str, int, str, bool]], start: str, intergenic: int, linear: bool) -> List[MtGenome]:
-    genomes, max_length = [MtGenome(sp[0], sp[1], parse_gff(sp[2])) for sp in species], -1
+    tmp_genomes, genomes, max_length = [MtGenome(sp[0], sp[1], parse_gff(sp[2])) for sp in species], [], -1
+
+    # filter out genomes with no genes
+    for genome in tmp_genomes:
+        if len(genome.genes) > 0:
+            genomes.append(genome)
+        else:
+            logging.warning(f'No gene found for {genome.species}, removed from the drawing')
+
+    # stop if no genome
+    if len(genomes) == 0:
+        sys.exit('Error : no gene found in any genome')
 
     # add intergenic regions
     if intergenic > 0:
