@@ -60,6 +60,8 @@ optional arguments:
   --font FONT           The font to use
   --output OUTPUT       The path of the output to create
   --circular            Draw a circular representation (for --gff only)
+  --skip                Comma-separated list of gene name prefixes (without space) to skip.
+                        For instance "--skip trn,at" will not draw tRNA and ATP synthase genes.
 ```
 
 ## Usages
