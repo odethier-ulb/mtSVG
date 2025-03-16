@@ -12,8 +12,8 @@ from dataclasses import dataclass
 
 
 logging.basicConfig(
-    level=logging.WARNING,  # Set minimum log level to WARNING
-    format="%(asctime)s - %(levelname)s - %(message)s",  # Log format
+    level=logging.WARNING,  
+    format="%(asctime)s - %(levelname)s - %(message)s",  
 )
 
 
@@ -101,7 +101,7 @@ def product_to_gene_name(product: str) -> str:
         raise Exception(f'Unknown product name: {p}')
 
 
-def parse_gff(filepath: str) -> List[Gene]:
+def parse_gff(filepath: str, to_skip: List[str]) -> List[Gene]:
     genes = []
     with open(filepath, 'rt') as f:
         lines = f.readlines()
@@ -122,12 +122,18 @@ def parse_gff(filepath: str) -> List[Gene]:
             genes.append(Gene(gene_name, lsplt[6], int(lsplt[3]), int(lsplt[4])))
         else:
             continue
-    genes.sort(key=lambda x: x.start)
-    return genes
+    # filter out genes to skip and order by start
+    genes_filtered = []
+    for gene in genes:
+        if not any([gene.name.startswith(s) for s in to_skip]):
+            genes_filtered.append(gene)
+    genes_filtered.sort(key=lambda x: x.start)
+    return genes_filtered
 
 
-def get_genomes(species: List[Tuple[str, int, str, bool]], start: str, intergenic: int, linear: bool) -> List[MtGenome]:
-    tmp_genomes, genomes, max_length = [MtGenome(sp[0], sp[1], parse_gff(sp[2])) for sp in species], [], -1
+def get_genomes(species: List[Tuple[str, int, str, bool]], start: str, intergenic: int, linear: bool, to_skip: str) -> List[MtGenome]:
+    to_skip = [] if to_skip is None else [s.strip() for s in to_skip.split(',')]
+    tmp_genomes, genomes, max_length = [MtGenome(sp[0], sp[1], parse_gff(sp[2], to_skip)) for sp in species], [], -1
 
     # filter out genomes with no genes
     for genome in tmp_genomes:
@@ -170,6 +176,9 @@ def get_genomes(species: List[Tuple[str, int, str, bool]], start: str, intergeni
             if start.lower() in genome.genes[i].name.lower():
                 start_idx = i
                 break
+        if start_idx == -1:
+            logging.warning(f'Start gene {start} not found in {genome.species}, will use first gene found')
+            start_idx = 0
         new_genes = []
         for i in range(start_idx, len(genome.genes)):
             new_genes.append(genome.genes[i])
@@ -491,6 +500,7 @@ if __name__ == '__main__':
     parser.add_argument('--circular', action='store_true', help='Draw a circular representation (for single gff only)')
     parser.add_argument('--font', type=str, help='The font to use', default='Arial')
     parser.add_argument('--output', type=str, help='The path of the output to create', default='mtDNA.svg')
+    parser.add_argument('--skip', type=str, help='Comma separated list of gene names to skip')
     args = parser.parse_args(args=None if sys.argv[1:] else ['--help'])
 
     if args.gff is not None:
@@ -508,7 +518,7 @@ if __name__ == '__main__':
     else:
         sys.exit('Error : missing gff(s) file')
 
-    genomes = get_genomes(gffs, args.start, args.intergenic, args.linear)
+    genomes = get_genomes(gffs, args.start, args.intergenic, args.linear, args.skip)
     if args.circular:
         draw_circle(genomes, args.output, args.monochromatic, args.font, args.full_name, args.oriented)
     else:
