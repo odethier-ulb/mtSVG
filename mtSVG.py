@@ -21,6 +21,8 @@ logging.basicConfig(
 
 GENE_CLASSES_MITOS = set(['gene', 'trna', 'rrna'])
 GENE_CLASSES_GENEBANK = set(['gene'])
+GENE_NAME_PREFIXES = set(['trn', 'rrn', 'atp', 'co', 'cy', 'na', 'nd'])
+
 
 @dataclass
 class Gene:
@@ -101,6 +103,27 @@ def product_to_gene_name(product: str) -> str:
         raise Exception(f'Unknown product name: {p}')
 
 
+def check_gene_name(name: str) -> bool:
+    return any([name.lower().startswith(prefix) for prefix in GENE_NAME_PREFIXES])
+
+
+def get_gene_name(lines: List, idx: int) -> str:
+    lsplt = lines[idx].strip().split('\t')
+    # try 'Name=' at current line
+    gene_name = next((x.strip() for x in lsplt[8].split(";") if x.strip().startswith("Name=")), '').split('=')[-1].lower()
+    if check_gene_name(gene_name):
+        return gene_name
+    # try 'gene=' at current line
+    gene_name = next((x.strip() for x in lsplt[8].split(";") if x.strip().startswith("gene=")), '').split('=')[-1].lower()
+    if check_gene_name(gene_name):
+        return gene_name
+    # try 'product=' at next line
+    gene_name = next((x.strip() for x in lines[idx+1].strip().split()[8].split(";") if x.strip().startswith("product=")), None)
+    if gene_name is not None:
+        return product_to_gene_name(gene_name.split('=')[-1])
+    raise Exception(f'Unknown file format, cannot retrieve gene names')
+
+
 def parse_gff(filepath: str, to_skip: List[str]) -> List[Gene]:
     genes = []
     with open(filepath, 'rt') as f:
@@ -113,12 +136,7 @@ def parse_gff(filepath: str, to_skip: List[str]) -> List[Gene]:
             gene_name = next((x.strip() for x in lsplt[8].split(";") if x.strip().startswith("Name=")), None)
             genes.append(Gene(gene_name.split('=')[-1].lower(), lsplt[6], int(lsplt[3]), int(lsplt[4])))
         elif not is_mitos and lsplt[2].lower() in GENE_CLASSES_GENEBANK:
-            gene_name = next((x.strip() for x in lsplt[8].split(";") if x.strip().startswith("gene=")), None)
-            if not gene_name is None:
-                gene_name = gene_name.split('=')[-1].lower()
-            else: 
-                gene_name = next((x.strip() for x in lines[idx+1].strip().split()[8].split(";") if x.strip().startswith("product=")), None) 
-                gene_name = product_to_gene_name(gene_name.split('=')[-1])
+            gene_name = get_gene_name(lines, idx)
             genes.append(Gene(gene_name, lsplt[6], int(lsplt[3]), int(lsplt[4])))
         else:
             continue
