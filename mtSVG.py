@@ -52,9 +52,9 @@ class MtGenome:
 def product_to_gene_name(product: str) -> str:
     p = product.lower()
     if '16s' in p or 'large' in p:
-        return 'rrnl'
+        return 'rrnL'
     elif '12s' in p or 'small' in p:
-        return 'rrns'
+        return 'rrnS'
     elif 'trna-ala' in p:
         return 'trnA'
     elif 'trna-arg' in p:
@@ -110,11 +110,11 @@ def check_gene_name(name: str) -> bool:
 def get_gene_name(lines: List, idx: int) -> str:
     lsplt = lines[idx].strip().split('\t')
     # try 'Name=' at current line
-    gene_name = next((x.strip() for x in lsplt[8].split(";") if x.strip().startswith("Name=")), '').split('=')[-1].lower()
+    gene_name = next((x.strip() for x in lsplt[8].split(";") if x.strip().startswith("Name=")), '').split('=')[-1]
     if check_gene_name(gene_name):
         return gene_name
     # try 'gene=' at current line
-    gene_name = next((x.strip() for x in lsplt[8].split(";") if x.strip().startswith("gene=")), '').split('=')[-1].lower()
+    gene_name = next((x.strip() for x in lsplt[8].split(";") if x.strip().startswith("gene=")), '').split('=')[-1]
     if check_gene_name(gene_name):
         return gene_name
     # try 'product=' at next line
@@ -134,7 +134,9 @@ def parse_gff(filepath: str, to_skip: List[str]) -> List[Gene]:
         is_mitos = lsplt[1].lower().startswith('mit')
         if is_mitos and lsplt[2].lower() in GENE_CLASSES_MITOS:
             gene_name = next((x.strip() for x in lsplt[8].split(";") if x.strip().startswith("Name=")), None)
-            genes.append(Gene(gene_name.split('=')[-1].lower(), lsplt[6], int(lsplt[3]), int(lsplt[4])))
+            if gene_name is None:
+                gene_name = next((x.strip() for x in lsplt[8].split(";") if x.strip().startswith("gene_id=")), None)
+            genes.append(Gene(gene_name.split('=')[-1], lsplt[6], int(lsplt[3]), int(lsplt[4])))
         elif not is_mitos and lsplt[2].lower() in GENE_CLASSES_GENEBANK:
             gene_name = get_gene_name(lines, idx)
             genes.append(Gene(gene_name, lsplt[6], int(lsplt[3]), int(lsplt[4])))
@@ -275,10 +277,12 @@ def get_drawing(drawables: List[DrawableGenome], circular=False) -> draw.Drawing
 
 def get_clean_name(gene_name: str) -> str:
     try:
-        if gene_name.lower().startswith('trn'):
+        if gene_name.lower().startswith('trn') or gene_name.lower().startswith('rrn'):
             return 'trn' + gene_name[3].upper()
+        elif gene_name.lower().startswith('nad4') and len(gene_name) > 4:
+            return 'nad4L'
         else:
-            return gene_name.split('_')[0].split('-')[0]
+            return gene_name.split('_')[0].split('-')[0].lower()
     except:
         return gene_name
 
