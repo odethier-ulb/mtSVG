@@ -180,7 +180,7 @@ def get_genomes(species: List[Tuple[str, int, str, bool]], start: str, intergeni
                     genome.genes.insert(i, Gene('intergenic', None, genome.genes[i - 1].end, genome.genes[i].start))
                     i -= 1
             # fill the gap between last gene and total length
-            if genome.genes[-1].end < genome.length and genome.genes[-1].end - genome.genes[-1].start >= intergenic:
+            if genome.genes[-1].end < genome.length and genome.length - genome.genes[-1].end >= intergenic:
                 genome.genes.append(Gene('intergenic', None, genome.genes[-1].end, genome.length))
     # reverse
     for i in range(len(species)):
