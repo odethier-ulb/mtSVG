@@ -186,6 +186,8 @@ def get_genomes(species: List[Tuple[str, int, str, bool]], start: str, intergeni
     for i in range(len(species)):
         if species[i][3]:
             genomes[i].genes.reverse()
+            for gene in genomes[i].genes:
+                gene.orientation = '+' if gene.orientation == '-' else '-'
 
     # align to start gene
     for genome in genomes:
@@ -277,8 +279,10 @@ def get_drawing(drawables: List[DrawableGenome], circular=False) -> draw.Drawing
 
 def get_clean_name(gene_name: str) -> str:
     try:
-        if gene_name.lower().startswith('trn') or gene_name.lower().startswith('rrn'):
+        if gene_name.lower().startswith('trn'):
             return 'trn' + gene_name[3].upper()
+        elif gene_name.lower().startswith('rrn'):
+            return 'rrn' + gene_name[3].upper()
         elif gene_name.lower().startswith('nad4') and len(gene_name) > 4:
             return 'nad4L'
         else:
@@ -441,7 +445,7 @@ def draw_circular_gene(drawable: DrawableGenome, gene: Gene, c_x: float, c_y: fl
         orientation_color = get_color(drawable.color_scheme, gene.orientation)
         origin_x = x_pos if gene.orientation == '+' else x_pos + SCALE_FACTOR
         angle_from = x_to_deg(origin_x, r_out)
-        angle_to = x_to_deg(x_pos + (gene.scaled_length - 1) * SCALE_FACTOR, r_out)
+        angle_to = x_to_deg(origin_x + (gene.scaled_length - 1) * SCALE_FACTOR, r_out)
         r_orientation = r_out - RIBBON_HEIGHT/1.8
 
         if gene.scaled_length > 1:
