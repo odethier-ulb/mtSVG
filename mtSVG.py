@@ -441,7 +441,7 @@ def draw_circular_gene(drawable: DrawableGenome, gene: Gene, c_x: float, c_y: fl
         orientation_color = get_color(drawable.color_scheme, gene.orientation)
         origin_x = x_pos if gene.orientation == '+' else x_pos + SCALE_FACTOR
         angle_from = x_to_deg(origin_x, r_out)
-        angle_to = x_to_deg(x_pos + (gene.scaled_length - 1) * SCALE_FACTOR, r_out)
+        angle_to = x_to_deg(origin_x + (gene.scaled_length - 1) * SCALE_FACTOR, r_out)
         r_orientation = r_out - RIBBON_HEIGHT/1.8
 
         if gene.scaled_length > 1:
