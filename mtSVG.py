@@ -279,10 +279,8 @@ def get_drawing(drawables: List[DrawableGenome], circular=False) -> draw.Drawing
 
 def get_clean_name(gene_name: str) -> str:
     try:
-        if gene_name.lower().startswith('trn'):
-            return 'trn' + gene_name[3].upper()
-        elif gene_name.lower().startswith('rrn'):
-            return 'rrn' + gene_name[3].upper()
+        if gene_name.lower().startswith('trn') or gene_name.lower().startswith('rrn'):
+            return gene_name.split('_')[0].split('(')[0]
         elif gene_name.lower().startswith('nad4') and len(gene_name) > 4:
             return 'nad4L'
         else:
